@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Daydream;
+  src: url(Daydream.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: BM_Pixel;
+  src: url(BM_Pixel.otf) format("truetype");
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.tools {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.screen {
+  grid-area: 1 / 1 / 4 / 5;
+}
+
+h1 {
+  /* font-family: BM_Pixel; */
+  font-family: Daydream;
+  color: aliceblue;
+  font-size: 5vw;
+  text-align: right;
+  /* text-shadow: 2px 2px 2px #404040; */
+
+  color: #404040;
+}
+
+.entry {
+  padding: 0px;
+  margin: 0px;
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  z-index: 0;
+}
+
+.entry img,
+.entry video {
+  width: 100%;
+  height: auto;
+  border: 3px solid #00000000;
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
