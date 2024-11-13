@@ -8,20 +8,37 @@
   src: url(BM_Pixel.otf) format("truetype");
 }
 
-.container {
+#myVideo {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.container {  
   display: grid;
+  position: fixed;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
+  grid-template-areas:
+    "display display display header"
+    "display display display tools"
+    "display display display tools";
 }
 
-.tools {
-  grid-area: 1 / 3 / 3 / 4;
+.header { grid-area: header; }
+
+.tools { 
+  grid-area: tools; 
 }
 
-.screen {
-  grid-area: 1 / 1 / 4 / 5;
+.display { grid-area: display; }
+
+#logo {
+  padding-right: 15%;
 }
 
 h1 {
@@ -29,9 +46,6 @@ h1 {
   font-family: Daydream;
   color: aliceblue;
   font-size: 5vw;
-  text-align: right;
-  /* text-shadow: 2px 2px 2px #404040; */
-
   color: #404040;
 }
 

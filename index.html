@@ -7,20 +7,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="game-of-life.mov" type="video/mp4">
+    </video>
     <div class="container">
-      <div class="tools" id="logo">
-        <h1>IDM <br />F24</h1>
-        <p align="right">
-          <input type="button" value="↻" />
-        </p>
-        <p align="right">
-          <input type="button" value="random" />
-        </p>
-        <p align="right">
-          <input type="button" value="organize" />
-        </p>
-      </div>
-      <div class="screen">
+      <div id="logo">
+        <div class="header" align="right">
+          <h1>IDM <br />F24</h1>
+          <input type="button" value="register" />
+        </div>
+        <div class="tools" align="right">
+          <p>
+            <button onClick="window.location.reload();">?</button>
+            <button onClick="window.location.reload();">↻</button>
+          </p>
+          <p>
+            <input type="button" value="random" />
+          </p>
+          <p>
+            <input type="button" value="organize" />
+          </p>
+        </div>
+    </div>
+      <div class="display">
         <p
           style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
           class="entry"
@@ -143,13 +152,13 @@
         let div2Right = div2.right;
         let div2Bottom = div2.bottom;
 
-        console.log(
-          "Project position:",
-          div1Top,
-          div1Bottom,
-          div1Left,
-          div1Right
-        );
+        // console.log(
+        //   "Project position:",
+        //   div1Top,
+        //   div1Bottom,
+        //   div1Left,
+        //   div1Right
+        // );
 
         var verticalMatch = false;
         var horizontalMatch = false;
@@ -163,7 +172,7 @@
         if (horizontalMatch && verticalMatch) {
           return true;
         } else {
-          console.log(horizontalMatch, verticalMatch);
+          // console.log(horizontalMatch, verticalMatch);
           return false;
         }
       }
