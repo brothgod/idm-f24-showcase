@@ -1,8 +1,7 @@
 var idmLogo = document.getElementById("logo");
-var screenWidth = document.getElementById("screen").clientWidth;
-var screenHeight = document.getElementById("screen").clientHeight;
 var idmLogoBoundingBox = idmLogo.getBoundingClientRect();
 var projectWidth = 100;
+var projects;
 
 console.log(
   "Logo position: ",
@@ -21,19 +20,9 @@ function separateAndPlaceProjects(jsonData) {
   });
 
   projectList.sort((a, b) => a.full_name.localeCompare(b.full_name));
-
-  var projects = generateProjects(projectList, "screen");
+  projects = generateProjects(projectList, "screen");
+  placeProjectsRandomly();
   console.log(projects);
-  for (var i = 0; i < projects.length; i++) {
-    var project = projects[i];
-    project.style.visibility = "hidden";
-
-    do {
-      setRandomPosition(project, screenHeight, screenWidth);
-    } while (touchingAnything(projects, i));
-
-    project.style.visibility = "visible";
-  }
 }
 
 function generateProjects(jsonData, containerId) {
@@ -54,12 +43,33 @@ function generateProjects(jsonData, containerId) {
   return projects;
 }
 
+function placeProjectsRandomly() {
+  for (var i = 0; i < projects.length; i++) {
+    var project = projects[i];
+    project.style.visibility = "hidden";
+
+    var count = 0;
+    do {
+      setRandomPosition(project);
+      count++;
+    } while (touchingAnything(projects, i) && count < 100);
+
+    project.style.visibility = "visible";
+  }
+}
+
 function setRandomPosition(project, winHeight, winWidth) {
-  randomTop = getRandomNumber(60, winHeight - 160);
-  randomLeft = getRandomNumber(0, winWidth - 100);
+  var winWidth = document.getElementById("screen").clientWidth;
+  var winHeight = document.getElementById("screen").clientHeight;
+  randomTop = getRandomNumber(0, winHeight);
+  randomLeft = getRandomNumber(0, winWidth);
   project.style.position = "absolute";
   project.style.top = randomTop + "px";
   project.style.left = randomLeft + "px";
+}
+
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 function touchingAnything(listOfDivs, index) {
@@ -112,10 +122,6 @@ function touching(div1, div2) {
     // console.log(horizontalMatch, verticalMatch);
     return false;
   }
-}
-
-function getRandomNumber(min, max) {
-  return Math.random() * (max - min) + min;
 }
 
 // Fetch the JSON file
