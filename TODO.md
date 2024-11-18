@@ -1,0 +1,6 @@
+- Make the projects only organize on one section of the page
+- All buttons should work
+  - Refresh = refresh the arrangement
+  - Random = random project
+  - Organize/Scatter \[TOGGLE\] = grid format
+-
