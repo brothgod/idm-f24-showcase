@@ -1,7 +1,8 @@
 var idmLogo = document.getElementById("logo");
-var winWidth = window.innerWidth;
-var winHeight = window.innerHeight;
+var screenWidth = document.getElementById("screen").clientWidth;
+var screenHeight = document.getElementById("screen").clientHeight;
 var idmLogoBoundingBox = idmLogo.getBoundingClientRect();
+var projectWidth = 100;
 
 console.log(
   "Logo position: ",
@@ -28,7 +29,7 @@ function separateAndPlaceProjects(jsonData) {
     project.style.visibility = "hidden";
 
     do {
-      setRandomPosition(project, winHeight, winWidth);
+      setRandomPosition(project, screenHeight, screenWidth);
     } while (touchingAnything(projects, i));
 
     project.style.visibility = "visible";
@@ -44,7 +45,7 @@ function generateProjects(jsonData, containerId) {
     // Create an image element
     var image = document.createElement("img");
     image.src = "idm.jpg"; // Use the main image from JSON data
-    image.width = "150";
+    image.width = projectWidth;
     p.appendChild(image);
 
     document.getElementById(containerId).appendChild(p);
@@ -69,7 +70,6 @@ function touchingAnything(listOfDivs, index) {
         listOfDivs[index].getBoundingClientRect()
       )
     ) {
-      console.log(i, index, " touching");
       return true;
     }
   }
@@ -93,8 +93,8 @@ function touching(div1, div2) {
 
   var verticalMatch = false;
   var horizontalMatch = false;
-  var verticalBuffer = 50; //Need a buffer
-  var horizontalBuffer = 75; //Need a buffer
+  var verticalBuffer = 35; //Need a buffer
+  var horizontalBuffer = 25; //Need a buffer
 
   // Check for horizontal overlap
   horizontalMatch =
