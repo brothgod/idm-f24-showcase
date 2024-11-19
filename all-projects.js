@@ -1,15 +1,21 @@
 var idmLogo = document.getElementById("logo");
 var idmLogoBoundingBox = idmLogo.getBoundingClientRect();
-var projectWidth = 100;
+var projectWidth = 125;
 var projects;
 
-console.log(
-  "Logo position: ",
-  idmLogoBoundingBox.top,
-  idmLogoBoundingBox.bottom,
-  idmLogoBoundingBox.left,
-  idmLogoBoundingBox.right
-);
+const slider = document.getElementById("rainbowSlider");
+const display = document.getElementById("colorDisplay");
+
+slider.addEventListener("input", () => {
+  const hue = slider.value; // Slider value (0 to 360)
+  display.style.backgroundColor = `hsl(${hue}, 100%, 50%)`; // Apply as HSL color
+  projects.forEach((project) => {
+    project.style.setProperty(
+      "--shadow",
+      `0 200px hsl(${hue}, 100%, 50%, 0.4) inset`
+    );
+  });
+});
 
 function separateAndPlaceProjects(jsonData) {
   // Separate jsonData into two lists based on the 'year' attribute
@@ -31,9 +37,10 @@ function generateProjects(jsonData, containerId) {
   jsonData.forEach(function (item) {
     // Create a new list item element
     var p = document.createElement("p");
+    p.classList.add("project");
     // Create an image element
     var image = document.createElement("img");
-    image.src = "idm.jpg"; // Use the main image from JSON data
+    image.src = "idm.jpg";
     image.width = projectWidth;
     p.appendChild(image);
 
@@ -52,17 +59,22 @@ function placeProjectsRandomly() {
     do {
       setRandomPosition(project);
       count++;
-    } while (touchingAnything(projects, i) && count < 100);
+    } while (touchingAnything(projects, i) && count < 300);
 
     project.style.visibility = "visible";
   }
+
+  var toggle = document.getElementById("toggle");
+  toggle.value = "organize";
+  toggle.onclick = organizeProjects;
+  document.getElementById("refresh").style.visibility = "visible";
 }
 
 function setRandomPosition(project, winHeight, winWidth) {
   var winWidth = document.getElementById("screen").clientWidth;
   var winHeight = document.getElementById("screen").clientHeight;
-  randomTop = getRandomNumber(0, winHeight);
-  randomLeft = getRandomNumber(0, winWidth);
+  randomTop = getRandomNumber(0, winHeight - 150);
+  randomLeft = getRandomNumber(0, winWidth - projectWidth);
   project.style.position = "absolute";
   project.style.top = randomTop + "px";
   project.style.left = randomLeft + "px";
@@ -122,6 +134,25 @@ function touching(div1, div2) {
     // console.log(horizontalMatch, verticalMatch);
     return false;
   }
+}
+
+function organizeProjects() {
+  var screen = document.getElementById("screen");
+  screen.style.display = "grid";
+  screen.style.gridTemplateColumns = "repeat(5, 1fr)"; // Creates 3 equal columns
+  screen.style.gridTemplateRows = "repeat(5, 1fr)"; // Creates 3 equal columns
+  screen.style.gap = "10px"; // Adds a 10px gap between grid items
+
+  projects.forEach((project) => {
+    project.style.position = "static"; // Remove absolute positioning
+    project.style.width = "auto"; // Allow items to adapt to grid cell size
+    project.style.height = "auto";
+  });
+
+  var button = document.getElementById("toggle");
+  button.value = "scatter";
+  button.onclick = placeProjectsRandomly;
+  document.getElementById("refresh").style.visibility = "hidden";
 }
 
 // Fetch the JSON file

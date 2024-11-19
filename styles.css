@@ -8,10 +8,16 @@
   src: url(BM_Pixel.otf) format("truetype");
 }
 
+html,
+body {
+  height: 100%;
+}
+
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
   gap: 0px 0px;
   grid-auto-flow: row;
 }
@@ -53,4 +59,12 @@ h1 {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+.project:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--shadow, 0 200px hsl(0, 100%, 50%, 0.4) inset);
 }
