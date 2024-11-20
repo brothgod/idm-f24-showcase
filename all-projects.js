@@ -12,7 +12,7 @@ slider.addEventListener("input", () => {
   projects.forEach((project) => {
     project.style.setProperty(
       "--shadow",
-      `0 200px hsl(${hue}, 100%, 50%, 0.4) inset`
+      `inset 125px 0px 0px hsl(${hue}, 100%, 50%, 0.4) `
     );
   });
 });
@@ -37,12 +37,16 @@ function generateProjects(jsonData, containerId) {
   jsonData.forEach(function (item) {
     // Create a new list item element
     var p = document.createElement("p");
-    p.classList.add("project");
+
+    var div = document.createElement("div");
+    p.appendChild(div);
+    div.classList.add("project");
+
     // Create an image element
     var image = document.createElement("img");
     image.src = "idm.jpg";
     image.width = projectWidth;
-    p.appendChild(image);
+    div.appendChild(image);
 
     document.getElementById(containerId).appendChild(p);
     projects.push(p);
@@ -137,16 +141,12 @@ function touching(div1, div2) {
 }
 
 function organizeProjects() {
-  var screen = document.getElementById("screen");
-  screen.style.display = "grid";
-  screen.style.gridTemplateColumns = "repeat(5, 1fr)"; // Creates 3 equal columns
-  screen.style.gridTemplateRows = "repeat(5, 1fr)"; // Creates 3 equal columns
-  screen.style.gap = "10px"; // Adds a 10px gap between grid items
-
   projects.forEach((project) => {
-    project.style.position = "static"; // Remove absolute positioning
+    project.style.position = "relative"; // Remove absolute positioning
     project.style.width = "auto"; // Allow items to adapt to grid cell size
     project.style.height = "auto";
+    project.style.top = 0;
+    project.style.left = 0;
   });
 
   var button = document.getElementById("toggle");
