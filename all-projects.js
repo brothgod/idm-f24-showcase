@@ -3,20 +3,6 @@ var idmLogoBoundingBox = idmLogo.getBoundingClientRect();
 var projectWidth = 125;
 var projects;
 
-const slider = document.getElementById("rainbowSlider");
-const display = document.getElementById("colorDisplay");
-
-slider.addEventListener("input", () => {
-  const hue = slider.value; // Slider value (0 to 360)
-  display.style.backgroundColor = `hsl(${hue}, 100%, 50%)`; // Apply as HSL color
-  projects.forEach((project) => {
-    project.style.setProperty(
-      "--shadow",
-      `inset 125px 0px 0px hsl(${hue}, 100%, 50%, 0.4) `
-    );
-  });
-});
-
 function separateAndPlaceProjects(jsonData) {
   // Separate jsonData into two lists based on the 'year' attribute
   var projectList = [];
@@ -118,8 +104,8 @@ function touching(div1, div2) {
   let div2Right = div2.right;
   let div2Bottom = div2.bottom;
 
-  console.log("Project 1 position:", div1Top, div1Bottom, div1Left, div1Right);
-  console.log("Project 2 position:", div2Top, div2Bottom, div2Left, div2Right);
+  // console.log("Project 1 position:", div1Top, div1Bottom, div1Left, div1Right);
+  // console.log("Project 2 position:", div2Top, div2Bottom, div2Left, div2Right);
 
   var verticalMatch = false;
   var horizontalMatch = false;
