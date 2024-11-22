@@ -35,18 +35,22 @@ function generateProjects(jsonData, containerId) {
   // Iterate through each JSON object
   var projects = [];
   jsonData.forEach(function (item) {
-    // Create a new list item element
     var p = document.createElement("p");
-
-    var div = document.createElement("div");
-    p.appendChild(div);
-    div.classList.add("project");
+    p.classList.add("project");
 
     // Create an image element
+    var imageDiv = document.createElement("div");
     var image = document.createElement("img");
     image.src = "idm.jpg";
     image.width = projectWidth;
-    div.appendChild(image);
+    imageDiv.classList.add("project-image");
+    imageDiv.appendChild(image);
+    p.appendChild(imageDiv);
+
+    var textDiv = document.createElement("div");
+    textDiv.textContent = item.project_title;
+    textDiv.classList.add("project-text");
+    p.appendChild(textDiv);
 
     document.getElementById(containerId).appendChild(p);
     projects.push(p);
