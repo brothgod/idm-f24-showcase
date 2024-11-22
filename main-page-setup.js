@@ -5,10 +5,7 @@ slider.addEventListener("input", () => {
   const hue = slider.value; // Slider value (0 to 360)
   display.style.backgroundColor = `hsl(${hue}, 100%, 50%)`; // Apply as HSL color
   projects.forEach((project) => {
-    project.style.setProperty(
-      "--shadow",
-      `inset 125px 0px 0px hsl(${hue}, 100%, 50%, 0.4) `
-    );
+    project.style.setProperty("--shadow-color", `${hue}, 100%, 50%`);
   });
 });
 

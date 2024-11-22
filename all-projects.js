@@ -11,7 +11,7 @@ function separateAndPlaceProjects(jsonData) {
     projectList.push(item);
   });
 
-  projectList.sort((a, b) => a.full_name.localeCompare(b.full_name));
+  projectList.sort((a, b) => a.first_name.localeCompare(b.first_name));
   projects = generateProjects(projectList, "screen");
   placeProjectsRandomly();
   console.log(projects);
@@ -27,14 +27,14 @@ function generateProjects(jsonData, containerId) {
     // Create an image element
     var imageDiv = document.createElement("div");
     var image = document.createElement("img");
-    image.src = "idm.jpg";
+    image.src = item.main_image;
     image.width = projectWidth;
     imageDiv.classList.add("project-image");
     imageDiv.appendChild(image);
     p.appendChild(imageDiv);
 
     var textDiv = document.createElement("div");
-    textDiv.textContent = item.project_title;
+    textDiv.textContent = item.title;
     textDiv.classList.add("project-text");
     p.appendChild(textDiv);
 
