@@ -81,5 +81,5 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 125px 0px 0px hsl(var(--shadow-color, 0, 100%, 100%), 0.25);
+  box-shadow: inset 125px 0px 0px hsl(var(--shadow-color, 0, 100%, 100%, 0));
 }
