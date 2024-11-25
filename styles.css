@@ -76,6 +76,34 @@ body {
   opacity: 0;
 }
 
+/* Default state: Show Image */
+.project.show-image .project-image {
+  opacity: 1;
+}
+.project.show-image .project-text {
+  opacity: 0;
+}
+.project.show-image:hover .project-image {
+  opacity: 0;
+}
+.project.show-image:hover .project-text {
+  opacity: 1;
+}
+
+/* Default state: Show Text */
+.project.show-text .project-text {
+  opacity: 1;
+}
+.project.show-text .project-image {
+  opacity: 0;
+}
+.project.show-text:hover .project-text {
+  opacity: 0;
+}
+.project.show-text:hover .project-image {
+  opacity: 1;
+}
+
 .project-image::before {
   content: "";
   position: absolute;

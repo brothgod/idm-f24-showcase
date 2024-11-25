@@ -27,7 +27,8 @@ function generateProjects(jsonData, containerId) {
     // Create an image element
     var imageDiv = document.createElement("div");
     var image = document.createElement("img");
-    image.src = item.main_image;
+    if (item.main_image === null) image.src = "./idm.jpg";
+    else image.src = item.main_image;
     image.width = projectWidth;
     imageDiv.classList.add("project-image");
     imageDiv.appendChild(image);
@@ -58,9 +59,9 @@ function placeProjectsRandomly() {
     project.style.visibility = "visible";
   }
 
-  var toggle = document.getElementById("toggle");
-  toggle.value = "organize";
-  toggle.onclick = organizeProjects;
+  var placeProjects = document.getElementById("place-projects");
+  placeProjects.value = "organize";
+  placeProjects.onclick = organizeProjects;
   document.getElementById("refresh").style.visibility = "visible";
 }
 
@@ -139,7 +140,7 @@ function organizeProjects() {
     project.style.left = 0;
   });
 
-  var button = document.getElementById("toggle");
+  var button = document.getElementById("place-projects");
   button.value = "scatter";
   button.onclick = placeProjectsRandomly;
   document.getElementById("refresh").style.visibility = "hidden";
