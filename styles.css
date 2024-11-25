@@ -33,17 +33,32 @@ body {
   color: #404040;
 }
 
-.tools {
+#tools {
   grid-area: 1 / 2 / 1 / 2;
 }
 
-#screen {
+.toggle-element {
+  position: relative;
+  transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
+}
+
+#about {
+  grid-area: 1 / 1 / 1 / 1;
+  text-align: center;
+}
+
+#all-projects {
   grid-area: 1 / 1 / 1 / 1;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  align-items: start; /* Prevent stretching vertically */
-  justify-items: start; /* Prevent stretching horizontally */
+  align-items: start; /* Prevent stretching vertically not sure if necessary */
+  justify-items: start; /* Prevent stretching horizontally not sure if necessary */
+}
+
+.hidden {
+  opacity: 0; /* Make element invisible */
+  pointer-events: none; /* Prevent interaction when hidden */
 }
 
 .project {
@@ -53,8 +68,7 @@ body {
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image fills the container */
-  transition: opacity 0.3s ease; /* Smooth fade-out effect */
+  object-fit: cover; /* Ensure the image fills the container, not sure if necessary */
 }
 
 .project-text {
@@ -65,7 +79,6 @@ body {
   font-size: 1rem;
   text-align: center;
   opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease; /* Smooth fade-in effect */
 }
 
 .project:hover .project-text {

@@ -12,7 +12,7 @@ function separateAndPlaceProjects(jsonData) {
   });
 
   projectList.sort((a, b) => a.first_name.localeCompare(b.first_name));
-  projects = generateProjects(projectList, "screen");
+  projects = generateProjects(projectList, "all-projects");
   placeProjectsRandomly();
   console.log(projects);
 }
@@ -66,8 +66,8 @@ function placeProjectsRandomly() {
 }
 
 function setRandomPosition(project, winHeight, winWidth) {
-  var winWidth = document.getElementById("screen").clientWidth;
-  var winHeight = document.getElementById("screen").clientHeight;
+  var winWidth = document.getElementById("all-projects").clientWidth;
+  var winHeight = document.getElementById("all-projects").clientHeight;
   randomTop = getRandomNumber(0, winHeight - 150);
   randomLeft = getRandomNumber(0, winWidth - projectWidth);
   project.style.position = "absolute";

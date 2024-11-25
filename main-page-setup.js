@@ -1,6 +1,9 @@
 const slider = document.getElementById("rainbowSlider");
 const display = document.getElementById("colorDisplay");
 const toggle = document.getElementById("toggle");
+const about = document.getElementById("about");
+const container = document.getElementById("container");
+const allProjects = document.getElementById("all-projects");
 
 slider.addEventListener("input", () => {
   const hue = slider.value; // Slider value (0 to 360)
@@ -13,7 +16,11 @@ slider.addEventListener("input", () => {
 // JavaScript to calculate and fix the container width
 window.addEventListener("DOMContentLoaded", () => {
   toggle.checked = false;
-  const container = document.getElementById("container");
+
+  // Make sure both elements are visible when page loads (reset states)
+  allProjects.classList.remove("hidden");
+  about.classList.add("hidden");
+
   const containerWidth = container.offsetWidth; // Get initial width
 
   // Set the fixed width
@@ -38,3 +45,10 @@ toggle.addEventListener("input", () => {
     });
   }
 });
+
+// Ensure elements are properly toggled between visible and hidden
+function toggleProjectsAbout() {
+  // Check if elements are visible or hidden, and toggle the classes
+  about.classList.toggle("hidden");
+  allProjects.classList.toggle("hidden");
+}

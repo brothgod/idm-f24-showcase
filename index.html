@@ -8,8 +8,11 @@
   </head>
   <body>
     <div id="container">
-      <div class="tools">
+      <div id="tools">
         <h1 id="logo">IDM <br />F24</h1>
+        <p align="right">
+          <input type="button" value="?" onclick="toggleProjectsAbout()" />
+        </p>
         <p align="right">
           <input type="button" value="random" />
         </p>
@@ -51,7 +54,34 @@
           Switch Image and Titles
         </p>
       </div>
-      <div id="screen"></div>
+      <div id="about" class="toggle-element hidden">
+        <p>
+          What is IDM? The
+          <a href="http://idm.engineering.nyu.edu/"
+            >Integrated Design & Media Program (IDM)</a
+          >
+          is a place that fosters creative practice, design research and
+          multidisciplinary experimentation with emerging media technologies.
+          IDM is a ‘STEAM‘ program combining artistic inquiry with scientific
+          research and technological practice to explore the social, cultural
+          and ethical potentials of emerging technologies. We focus on how to
+          create new experiences with technologies but also on what is
+          worthmaking and why. In our academic programs, digital media is
+          explored as a spectrum of practices that range from computer
+          programming (for app development,software engineering, game
+          development and interaction design) to 2D and 3D graphics (for
+          human-computer interfaces, augmented reality, motion capture, and game
+          design & development)to photography, film, and audio (for
+          mediainstallations, performing arts research, and integration with
+          various mediums). Our students are artists, designers, and creative
+          technologists working in highly fluid industries that reward the
+          creative, the thoughtful, the technical, and the innovative.
+        </p>
+        <a id="closePopup" onclick="toggleProjectsAbout()"
+          >– back to projects —</a
+        >
+      </div>
+      <div id="all-projects" class="toggle-element"></div>
     </div>
     <script type="text/javascript" src="all-projects.js"></script>
     <script type="text/javascript" src="main-page-setup.js"></script>
