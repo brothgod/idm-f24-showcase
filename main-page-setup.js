@@ -52,3 +52,24 @@ function toggleProjectsAbout() {
   about.classList.toggle("hidden");
   allProjects.classList.toggle("hidden");
 }
+
+function readAloud() {
+  // Get the text from the div
+  const text = document.getElementById("about").innerText;
+
+  // Check if speech synthesis is available
+  if ("speechSynthesis" in window) {
+    // Create a new speech synthesis instance
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    // Optionally set some properties (like voice, pitch, rate)
+    utterance.voice = speechSynthesis.getVoices()[0]; // Choose the first available voice
+    utterance.pitch = 1; // Set pitch (0 = low, 2 = high)
+    utterance.rate = 1; // Set speed (0.1 = slow, 1 = normal, 2 = fast)
+
+    // Speak the text
+    speechSynthesis.speak(utterance);
+  } else {
+    alert("Sorry, your browser does not support speech synthesis.");
+  }
+}

@@ -49,6 +49,7 @@ function placeProjectsRandomly() {
   for (var i = 0; i < projects.length; i++) {
     var project = projects[i];
     project.style.visibility = "hidden";
+    project.style.position = "absolute";
 
     var count = 0;
     do {
@@ -70,7 +71,6 @@ function setRandomPosition(project, winHeight, winWidth) {
   var winHeight = document.getElementById("all-projects").clientHeight;
   randomTop = getRandomNumber(0, winHeight - 150);
   randomLeft = getRandomNumber(0, winWidth - projectWidth);
-  project.style.position = "absolute";
   project.style.top = randomTop + "px";
   project.style.left = randomLeft + "px";
 }
