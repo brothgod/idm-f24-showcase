@@ -21,8 +21,10 @@ function generateProjects(jsonData, containerId) {
   // Iterate through each JSON object
   var projects = [];
   jsonData.forEach(function (item) {
-    var p = document.createElement("p");
-    p.classList.add("project");
+    var a = document.createElement("a");
+    a.classList.add("project");
+    var id = (item.first_name + item.last_name.substring(0, 1)).toLowerCase();
+    a.href = "project.html?id=" + id;
 
     // Create an image element
     var imageDiv = document.createElement("div");
@@ -32,15 +34,15 @@ function generateProjects(jsonData, containerId) {
     image.width = projectWidth;
     imageDiv.classList.add("project-image");
     imageDiv.appendChild(image);
-    p.appendChild(imageDiv);
+    a.appendChild(imageDiv);
 
     var textDiv = document.createElement("div");
     textDiv.textContent = item.title;
     textDiv.classList.add("project-text");
-    p.appendChild(textDiv);
+    a.appendChild(textDiv);
 
-    document.getElementById(containerId).appendChild(p);
-    projects.push(p);
+    document.getElementById(containerId).appendChild(a);
+    projects.push(a);
   });
   return projects;
 }
