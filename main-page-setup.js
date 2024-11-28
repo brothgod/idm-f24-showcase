@@ -4,6 +4,7 @@ const toggle = document.getElementById("toggle");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
 const allProjects = document.getElementById("all-projects");
+const tools = document.getElementById("tools");
 
 slider.addEventListener("input", () => {
   const hue = slider.value; // Slider value (0 to 360)
@@ -51,6 +52,7 @@ function toggleProjectsAbout() {
   // Check if elements are visible or hidden, and toggle the classes
   about.classList.toggle("hidden");
   allProjects.classList.toggle("hidden");
+  tools.classList.toggle("hidden");
 }
 
 function readAloud() {

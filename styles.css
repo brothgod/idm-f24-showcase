@@ -45,6 +45,17 @@ body {
 #about {
   grid-area: 1 / 1 / 1 / 1;
   text-align: center;
+  cursor: pointer;
+}
+
+#about a {
+  color: #fb8b24;
+}
+
+#about a:hover {
+  margin: auto;
+  color: #ffeddf;
+  background-color: #fb8b24;
 }
 
 #all-projects {
