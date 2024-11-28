@@ -33,7 +33,7 @@ body {
   color: #404040;
 }
 
-#tools {
+#sidebar {
   grid-area: 1 / 2 / 1 / 2;
 }
 

@@ -8,51 +8,53 @@
   </head>
   <body>
     <div id="container">
-      <div id="tools">
+      <div id="sidebar">
         <h1 id="logo">IDM <br />F24</h1>
-        <p align="right">
-          <input type="button" value="?" onclick="toggleProjectsAbout()" />
-        </p>
-        <p align="right">
-          <input type="button" value="random" />
-        </p>
-        <p align="right">
-          <input
-            id="refresh"
-            type="button"
-            value="↻"
-            onclick="placeProjectsRandomly()"
-          />
-          <input
-            id="place-projects"
-            type="button"
-            value="organize"
-            onclick="organizeProjects()"
-          />
-        </p>
-        <p align="right">
-          <a
-            id="colorDisplay"
-            style="
-              display: inline-block;
-              width: 15px;
-              height: 15px;
-              background-color: hsl(0, 100%, 50%);
-            "
-          ></a>
-          <input
-            id="rainbowSlider"
-            type="range"
-            step="0.02"
-            max="360"
-            min="0"
-            value="0"
-          />
-        </p>
-        <p align="right">
-          <input type="checkbox" id="toggle" />
-          Switch Image and Titles
-        </p>
+        <div id="tools">
+          <p align="right">
+            <input type="button" value="?" onclick="toggleProjectsAbout()" />
+          </p>
+          <p align="right">
+            <input type="button" value="random" />
+          </p>
+          <p align="right">
+            <input
+              id="refresh"
+              type="button"
+              value="↻"
+              onclick="placeProjectsRandomly()"
+            />
+            <input
+              id="place-projects"
+              type="button"
+              value="organize"
+              onclick="organizeProjects()"
+            />
+          </p>
+          <p align="right">
+            <a
+              id="colorDisplay"
+              style="
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-color: hsl(0, 100%, 50%);
+              "
+            ></a>
+            <input
+              id="rainbowSlider"
+              type="range"
+              step="0.02"
+              max="360"
+              min="0"
+              value="0"
+            />
+          </p>
+          <p align="right">
+            <input type="checkbox" id="toggle" />
+            Switch Image and Titles
+          </p>
+        </div>
       </div>
       <div id="about" class="toggle-element hidden">
         <p>
