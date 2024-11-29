@@ -16,7 +16,12 @@
         "linkedin": "https://www.linkedin.com/in/checocadena/",
         "instagram": "https://www.instagram.com/checocadena/",
         "videos": "https://www.youtube.com/@checocadena",
-        "profile_image": "https://drive.google.com/open?id=1X-SEKWononMs5kDJrZa94qQEKkKCq3q5"
+        "profile_image": "https://drive.google.com/open?id=1X-SEKWononMs5kDJrZa94qQEKkKCq3q5",
+        "related_projects": [
+            "junyoungo",
+            "aswadh",
+            "checoc"
+        ]
     },
     {
         "first_name": "Gabi",
@@ -35,7 +40,25 @@
         "linkedin": "https://www.linkedin.com/in/gabimcosta/",
         "instagram": "",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "lizziee",
+            "franciscob",
+            "ruxiw",
+            "jerryf",
+            "noak",
+            "aswadh",
+            "emilyw",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Neha",
@@ -54,7 +77,8 @@
         "linkedin": "linkedin.com/in/neha-obilisetty-933431200/",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=1LzfBdH2DAJ5H3c2U54FhA9yiFWCDTRJ4"
+        "profile_image": "https://drive.google.com/open?id=1LzfBdH2DAJ5H3c2U54FhA9yiFWCDTRJ4",
+        "related_projects": []
     },
     {
         "first_name": "Shania",
@@ -73,7 +97,21 @@
         "linkedin": "www.linkedin.com/in/shania-li",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=18LSQ0JMR_4QQ7y5G8YeiES_y9rHudud1"
+        "profile_image": "https://drive.google.com/open?id=18LSQ0JMR_4QQ7y5G8YeiES_y9rHudud1",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Rosalyn",
@@ -92,7 +130,22 @@
         "linkedin": "linkedin.com/in/rosalynshen",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=1R1JscOu4CspGnpEIQ6kPJ02pA9RBZzzJ"
+        "profile_image": "https://drive.google.com/open?id=1R1JscOu4CspGnpEIQ6kPJ02pA9RBZzzJ",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "jerryf",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Chau",
@@ -111,7 +164,21 @@
         "linkedin": "",
         "instagram": "https://www.instagram.com/_whynotchao_/",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Ruxi",
@@ -130,7 +197,14 @@
         "linkedin": "https://www.linkedin.com/feed/",
         "instagram": "79wang_",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "ruxiw",
+            "jerryf",
+            "edwardj",
+            "alwynt"
+        ]
     },
     {
         "first_name": "Tracy",
@@ -149,7 +223,24 @@
         "linkedin": "https://www.linkedin.com/in/tracy-gaboyau-276085179/",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=13M3uG826UX4H_K7uoLJX7874_AzmVNeb"
+        "profile_image": "https://drive.google.com/open?id=13M3uG826UX4H_K7uoLJX7874_AzmVNeb",
+        "related_projects": [
+            "gabic",
+            "lizziee",
+            "franciscob",
+            "jerryf",
+            "noak",
+            "aswadh",
+            "emilyw",
+            "shanial",
+            "tracyg",
+            "alwynt",
+            "rosalyns",
+            "junyoungo",
+            "edwardj",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Junyoung",
@@ -168,7 +259,22 @@
         "linkedin": "www.linkedin.com/in/junyoung-oh-3489422b2",
         "instagram": "",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "checoc",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Edward",
@@ -187,7 +293,22 @@
         "linkedin": "https://www.linkedin.com/in/edward-jeong-a67641172/",
         "instagram": "https://www.instagram.com/seonwoojeong/",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "ruxiw",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Noa",
@@ -206,7 +327,21 @@
         "linkedin": "https://www.linkedin.com/in/noa-kirschbaum-bab2591a8/",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=1PCbIQ89Fo54X-vSj3IDEsL0SXLdsTScQ"
+        "profile_image": "https://drive.google.com/open?id=1PCbIQ89Fo54X-vSj3IDEsL0SXLdsTScQ",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Aswad",
@@ -225,7 +360,24 @@
         "linkedin": "https://www.linkedin.com/in/aswad-hossain/",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=176UhZPmdSzhg_M7Mp7ewBcgsPWFqChUY"
+        "profile_image": "https://drive.google.com/open?id=176UhZPmdSzhg_M7Mp7ewBcgsPWFqChUY",
+        "related_projects": [
+            "gabic",
+            "lizziee",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "jamiel",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "checoc",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Hash",
@@ -244,7 +396,11 @@
         "linkedin": "",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=1K9Gknu_rOcNajcA3O-NdcWad-mW5RPoI"
+        "profile_image": "https://drive.google.com/open?id=1K9Gknu_rOcNajcA3O-NdcWad-mW5RPoI",
+        "related_projects": [
+            "hashe",
+            "jamiel"
+        ]
     },
     {
         "first_name": "Jerry",
@@ -263,7 +419,16 @@
         "linkedin": "www.linkedin.com/in/jerryfeng13",
         "instagram": "",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "lizziee",
+            "jerryf",
+            "ruxiw",
+            "tracyg",
+            "alwynt",
+            "rosalyns"
+        ]
     },
     {
         "first_name": "Lizzie",
@@ -282,7 +447,17 @@
         "linkedin": "https://www.linkedin.com/in/elizabeth-england-49789b22b/",
         "instagram": "https://www.instagram.com/bunnycat666/",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "lizziee",
+            "emilyw",
+            "jerryf",
+            "aswadh",
+            "jamiel",
+            "tracyg",
+            "alwynt"
+        ]
     },
     {
         "first_name": "Jaren",
@@ -301,7 +476,8 @@
         "linkedin": "",
         "instagram": "",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": []
     },
     {
         "first_name": "Xinran",
@@ -320,7 +496,21 @@
         "linkedin": "https://www.linkedin.com/in/xinran-shen-7202091ba/",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=1I6dWz6RoHJ8-OszSDXPe-agc7sfQgFjn"
+        "profile_image": "https://drive.google.com/open?id=1I6dWz6RoHJ8-OszSDXPe-agc7sfQgFjn",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Emily",
@@ -339,7 +529,13 @@
         "linkedin": "www.linkedin.com/in/yimin-wang-4548b2173",
         "instagram": "",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=1i3oyTZCEKfOTWxdDEFfzWzXuX6xSQWai"
+        "profile_image": "https://drive.google.com/open?id=1i3oyTZCEKfOTWxdDEFfzWzXuX6xSQWai",
+        "related_projects": [
+            "tracyg",
+            "gabic",
+            "emilyw",
+            "lizziee"
+        ]
     },
     {
         "first_name": "Jamie",
@@ -358,7 +554,13 @@
         "linkedin": "https://www.linkedin.com/in/jamie-lee-382489212/",
         "instagram": "https://www.instagram.com/jaceisms/",
         "videos": "",
-        "profile_image": "https://drive.google.com/open?id=13gMzHHTJG-zCffWczAB08ctGi_NfVEkR"
+        "profile_image": "https://drive.google.com/open?id=13gMzHHTJG-zCffWczAB08ctGi_NfVEkR",
+        "related_projects": [
+            "hashe",
+            "lizziee",
+            "aswadh",
+            "jamiel"
+        ]
     },
     {
         "first_name": "Kisha",
@@ -377,7 +579,8 @@
         "linkedin": "",
         "instagram": "",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": []
     },
     {
         "first_name": "Francisco",
@@ -396,7 +599,21 @@
         "linkedin": "",
         "instagram": "",
         "videos": "",
-        "profile_image": ""
+        "profile_image": "",
+        "related_projects": [
+            "gabic",
+            "franciscob",
+            "noak",
+            "aswadh",
+            "shanial",
+            "tracyg",
+            "junyoungo",
+            "rosalyns",
+            "edwardj",
+            "alwynt",
+            "chaua",
+            "xinrans"
+        ]
     },
     {
         "first_name": "Alwyn",
@@ -415,6 +632,23 @@
         "linkedin": "www.linkedin.com/in/alwyn-tcha-53661124b",
         "instagram": "https://www.instagram.com/alwyntcha/",
         "videos": "https://www.youtube.com/watch?v=v4sBSQYVY8o  (Going to be updated)",
-        "profile_image": "https://drive.google.com/open?id=1mVvhNafyXUyzXFXhFWeIY4YLUNXkM6qp"
+        "profile_image": "https://drive.google.com/open?id=1mVvhNafyXUyzXFXhFWeIY4YLUNXkM6qp",
+        "related_projects": [
+            "gabic",
+            "lizziee",
+            "franciscob",
+            "jerryf",
+            "noak",
+            "aswadh",
+            "ruxiw",
+            "shanial",
+            "tracyg",
+            "alwynt",
+            "rosalyns",
+            "junyoungo",
+            "edwardj",
+            "chaua",
+            "xinrans"
+        ]
     }
 ]

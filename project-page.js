@@ -95,17 +95,25 @@ function initPage() {
         // if (foundElement.hasOwnProperty("supp_path")) {
         //   suppImg.childNodes[0].src = foundElement.supp_path;
         // }
-        var suppImg = document.getElementById("supp-img");
-        if (
-          foundElement.hasOwnProperty("supp_images") &&
-          Array.isArray(foundElement.supp_path)
-        ) {
-          foundElement.supp_path.forEach(function (imageSrc, index) {
-            var img = document.createElement("img");
-            img.src = imageSrc;
-            suppImg.appendChild(img);
-          });
-        }
+        // var suppImg = document.getElementById("supp-img");
+        // if (
+        //   foundElement.hasOwnProperty("supp_images") &&
+        //   Array.isArray(foundElement.supp_path)
+        // ) {
+        //   foundElement.supp_path.forEach(function (imageSrc, index) {
+        //     var img = document.createElement("img");
+        //     img.src = imageSrc;
+        //     suppImg.appendChild(img);
+        //   });
+        // }
+
+        var relatedProjects = document.getElementById("related-projects");
+        foundElement.related_projects.forEach(function (proj, index) {
+          var a = document.createElement("a");
+          a.href = "/project.html?id=" + proj;
+          a.textContent = proj + ", ";
+          relatedProjects.appendChild(a);
+        });
       } else {
         window.location.href = "/index.html";
         console.log("Element not found");
