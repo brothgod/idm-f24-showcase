@@ -11,15 +11,17 @@
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 
 #container {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100%;
   height: 100vh;
   gap: 0px 0px;
   grid-auto-flow: row;
+  overflow: hidden; /* Prevent scrolling on the entire page */
 }
 
 #logo {
@@ -35,6 +37,8 @@ body {
 
 #sidebar {
   grid-area: 1 / 2 / 1 / 2;
+  overflow: hidden; /* Prevent all scrolling */
+  margin-right: 10px;
 }
 
 .toggle-element {
@@ -65,6 +69,10 @@ body {
   grid-template-rows: repeat(5, 1fr);
   align-items: start; /* Prevent stretching vertically not sure if necessary */
   justify-items: start; /* Prevent stretching horizontally not sure if necessary */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Enable vertical scrolling */
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 .hidden {
