@@ -232,7 +232,7 @@ video {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1em 1em;
-    grid-template-areas: "project-top" "project-right" "project-bottom";
+    grid-template-areas: "project-right" "project-top" "project-bottom";
   }
 
   .project-top {
@@ -245,6 +245,7 @@ video {
 
   .project-right {
     grid-area: project-right;
+    /* text-align: center; */
   }
 }
 
