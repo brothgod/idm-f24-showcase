@@ -1,6 +1,11 @@
 @font-face {
-  font-family: Daydream;
-  src: url(Daydream.ttf) format("truetype");
+  font-family: Dokdo;
+  src: url(Dokdo.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: FreckleFace;
+  src: url(FreckleFace.ttf) format("truetype");
 }
 
 @font-face {
@@ -8,63 +13,260 @@
   src: url(BM_Pixel.otf) format("truetype");
 }
 
-#myVideo {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  max-width: 100%;
-  max-height: 100%;
+html,
+body {
+  height: 100%;
+  font-family: Diatype;
+  margin: 0;
 }
 
-.container {  
+#container {
   display: grid;
-  position: fixed;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 100%;
+  height: 100vh;
   gap: 0px 0px;
   grid-auto-flow: row;
-  grid-template-areas:
-    "display display display header"
-    "display display display tools"
-    "display display display tools";
+  overflow: hidden; /* Prevent scrolling on the entire page */
 }
-
-.header { grid-area: header; }
-
-.tools { 
-  grid-area: tools; 
-}
-
-.display { grid-area: display; }
 
 #logo {
-  padding-right: 15%;
+  font-family: Dokdo;
+  font-size: 100px;
+  color: black;
 }
 
-h1 {
-  /* font-family: BM_Pixel; */
-  font-family: Daydream;
-  color: aliceblue;
-  font-size: 5vw;
-  color: #404040;
+#sidebar {
+  grid-area: 1 / 2 / 1 / 2;
+  overflow: hidden; /* Prevent all scrolling */
+  margin-right: 10px;
+  text-align: center;
 }
 
-.entry {
-  padding: 0px;
-  margin: 0px;
-  font-size: 0px;
-  line-height: 0px;
-  position: absolute;
-  z-index: 0;
+#about-button {
+  color: black;
+  cursor: crosshair;
 }
 
-.entry img,
-.entry video {
-  width: 100%;
-  height: auto;
-  border: 3px solid #00000000;
+#random-button {
+  color: black;
+  cursor: crosshair;
+}
+
+.toggle-element {
   position: relative;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
 }
+
+#about {
+  grid-area: 1 / 1 / 1 / 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+#about a {
+  color: #fb8b24;
+}
+
+#about a:hover {
+  margin: auto;
+  color: #ffeddf;
+  background-color: #fb8b24;
+}
+
+#all-projects {
+  grid-area: 1 / 1 / 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-items: center;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.hidden {
+  opacity: 0; /* Make element invisible */
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.project {
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fills the container, not sure if necessary */
+  transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
+}
+
+.project-image img {
+  display: block;
+}
+
+.project-image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 125px 0px 0px hsl(var(--shadow-color, 0));
+}
+
+.project-text {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: hsl(var(--text-color, 0)) solid;
+  font-size: 1rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
+  color: hsl(var(--text-color, 0));
+  background-color: white;
+}
+
+.project:hover .project-text {
+  opacity: 1;
+}
+
+.project:hover .project-image {
+  opacity: 0;
+}
+
+/* Default state: Show Image */
+.project.show-image .project-image {
+  opacity: 1;
+}
+.project.show-image .project-text {
+  opacity: 0;
+}
+.project.show-image:hover .project-image {
+  opacity: 0;
+}
+.project.show-image:hover .project-text {
+  opacity: 1;
+}
+
+/* Default state: Show Text */
+.project.show-text .project-text {
+  opacity: 1;
+}
+.project.show-text .project-image {
+  opacity: 0;
+}
+.project.show-text:hover .project-text {
+  opacity: 0;
+}
+.project.show-text:hover .project-image {
+  opacity: 1;
+}
+
+/* template formatting start */
+
+#project-header {
+  margin: 3%;
+  /* margin-left: 20%;
+  margin-right: 20%; */
+  line-height: 1.7em;
+  font-size: small;
+}
+
+#project-header a {
+  text-decoration: none;
+  color: #ddd92a;
+}
+
+#project-header a:hover {
+  background-color: #c0fdfb;
+  color: #0d1321;
+}
+
+#title {
+  text-align: center;
+  font-size: medium;
+}
+
+#name,
+#qualifiers,
+#link {
+  text-align: center;
+}
+
+#right-contents {
+  position: sticky;
+  top: 2em;
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-auto-columns: 1fr;
+  gap: 1em 2em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "project-top project-right"
+    "project-bottom project-right";
+}
+
+.project-top {
+  grid-area: project-top;
+}
+
+.project-bottom {
+  grid-area: project-bottom;
+}
+
+.project-right {
+  grid-area: project-right;
+}
+
+#main-img img,
+video {
+  display: block;
+  width: 100%;
+}
+
+#supp-img img {
+  display: block;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+/* smaller screen */
+@media (max-width: 850px) {
+  .project-body {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1em 1em;
+    grid-template-areas: "project-right" "project-top" "project-bottom";
+  }
+
+  .project-top {
+    grid-area: project-top;
+  }
+
+  .project-bottom {
+    grid-area: project-bottom;
+  }
+
+  .project-right {
+    grid-area: project-right;
+    /* text-align: center; */
+  }
+}
+
+/* template formatting end */

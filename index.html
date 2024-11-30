@@ -7,179 +7,96 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <video autoplay muted loop id="myVideo">
-      <source src="game-of-life.mov" type="video/mp4">
-    </video>
-    <div class="container">
-      <div id="logo">
-        <div class="header" align="right">
-          <h1>IDM <br />F24</h1>
-          <input type="button" value="register" />
+    <div id="container">
+      <div id="sidebar">
+        <h1 id="logo">idm<br>f24</h1>
+        <div id="tools">
+          <p>
+            <div id="about-button" onclick="toggleProjectsAbout()">about
+            </div></p>
+          <p id="random-button">random</p>
+          <p>
+            <input
+            id="refresh"
+            type="button"
+            value="↻"
+            onclick="placeProjectsRandomly()"
+          />
+          <input
+            id="place-projects"
+            type="button"
+            value="organize"
+            onclick="organizeProjects()"
+          />
+          </p>
+          <p>
+            <a
+              id="colorDisplay"
+              style="
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-color: hsl(0, 100%, 50%);
+              "
+            ></a>
+            <input
+              id="rainbowSlider"
+              type="range"
+              step="0.02"
+              max="360"
+              min="0"
+              value="0"
+            />
+          </p>
+          <p>
+            <input type="checkbox" id="toggle" />
+            switch image and titles
+          </p>
         </div>
-        <div class="tools" align="right">
-          <p>
-            <button onClick="window.location.reload();">?</button>
-            <button onClick="window.location.reload();">↻</button>
-          </p>
-          <p>
-            <input type="button" value="random" />
-          </p>
-          <p>
-            <input type="button" value="organize" />
-          </p>
-        </div>
-    </div>
-      <div class="display">
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
-        <p
-          style="top: 14%; left: 67%; max-width: 150px; min-width: 100px"
-          class="entry"
-        >
-          <img alt="" src="idm.jpg" />
-        </p>
       </div>
+      <div id="about" class="toggle-element hidden">
+        <p>
+          What is IDM? The
+          <a href="http://idm.engineering.nyu.edu/"
+            >Integrated Design & Media Program (IDM)</a
+          >
+          is a place that fosters creative practice, design research and
+          multidisciplinary experimentation with emerging media technologies.
+          IDM is a ‘STEAM‘ program combining artistic inquiry with scientific
+          research and technological practice to explore the social, cultural
+          and ethical potentials of emerging technologies. We focus on how to
+          create new experiences with technologies but also on what is
+          worthmaking and why. In our academic programs, digital media is
+          explored as a spectrum of practices that range from computer
+          programming (for app development,software engineering, game
+          development and interaction design) to 2D and 3D graphics (for
+          human-computer interfaces, augmented reality, motion capture, and game
+          design & development)to photography, film, and audio (for
+          mediainstallations, performing arts research, and integration with
+          various mediums). Our students are artists, designers, and creative
+          technologists working in highly fluid industries that reward the
+          creative, the thoughtful, the technical, and the innovative.
+        </p>
+        <input
+          id="startStopRead"
+          type="button"
+          value="read aloud"
+          onclick="toggleStartStop()"
+        />
+        <input
+          id="playPauseRead"
+          type="button"
+          value="play"
+          onclick="togglePlayPause()"
+          disabled
+        />
+        <a id="closePopup" onclick="toggleProjectsAbout()"
+          >– back to projects —</a
+        >
+      </div>
+      <div id="all-projects" class="toggle-element"></div>
     </div>
-
-    <script>
-      var projects = document.getElementsByClassName("entry");
-      var idmLogo = document.getElementById("logo");
-      var winWidth = window.innerWidth;
-      var winHeight = window.innerHeight;
-      var idmLogoBoundingBox = idmLogo.getBoundingClientRect();
-      console.log(
-        "Logo position: ",
-        idmLogoBoundingBox.top,
-        idmLogoBoundingBox.bottom,
-        idmLogoBoundingBox.left,
-        idmLogoBoundingBox.right
-      );
-
-      for (var i = 0; i < projects.length; i++) {
-        var project = projects[i];
-        console.log("Project ", i);
-        do {
-          setRandomPosition(project, winHeight, winWidth);
-        } while (
-          touching(
-            project.getBoundingClientRect(),
-            idmLogo.getBoundingClientRect()
-          )
-        );
-      }
-
-      function setRandomPosition(project, winHeight, winWidth) {
-        randomTop = getRandomNumber(60, winHeight - 160);
-        randomLeft = getRandomNumber(0, winWidth - 100);
-
-        project.style.top = randomTop + "px";
-        project.style.left = randomLeft + "px";
-      }
-
-      //Returns true if two divs are touching
-      function touching(div1, div2) {
-        let div1Top = div1.top;
-        let div1Left = div1.left;
-        let div1Right = div1.right;
-        let div1Bottom = div1.bottom;
-
-        let div2Top = div2.top;
-        let div2Left = div2.left;
-        let div2Right = div2.right;
-        let div2Bottom = div2.bottom;
-
-        // console.log(
-        //   "Project position:",
-        //   div1Top,
-        //   div1Bottom,
-        //   div1Left,
-        //   div1Right
-        // );
-
-        var verticalMatch = false;
-        var horizontalMatch = false;
-
-        // Check for horizontal overlap
-        horizontalMatch = div1Left <= div2Right && div1Right >= div2Left;
-
-        // Check for vertical overlap
-        verticalMatch = div1Top <= div2Bottom && div1Bottom >= div2Top;
-
-        if (horizontalMatch && verticalMatch) {
-          return true;
-        } else {
-          // console.log(horizontalMatch, verticalMatch);
-          return false;
-        }
-      }
-
-      function getRandomNumber(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-    </script>
+    <script type="text/javascript" src="all-projects.js"></script>
+    <script type="text/javascript" src="main-page-setup.js"></script>
   </body>
 </html>
