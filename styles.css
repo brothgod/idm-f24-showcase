@@ -33,7 +33,10 @@ body {
 #logo {
   font-family: Dokdo;
   font-size: 100px;
-  color: black;
+  margin: 0;
+  margin-top: 5vh;
+  line-height: 8vh;
+  color: hsl(var(--text-color, 0));
 }
 
 #sidebar {

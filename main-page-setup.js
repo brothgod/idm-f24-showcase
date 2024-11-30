@@ -4,6 +4,7 @@ const toggle = document.getElementById("toggle");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
 const allProjects = document.getElementById("all-projects");
+const logo = document.getElementById("logo");
 const tools = document.getElementById("tools");
 
 slider.addEventListener("input", () => {
@@ -13,6 +14,7 @@ slider.addEventListener("input", () => {
     project.style.setProperty("--shadow-color", `${hue}, 100%, 50%, .25`);
     project.style.setProperty("--text-color", `${hue}, 100%, 50%, 1`);
   });
+  logo.style.setProperty("--text-color", `${hue}, 100%, 50%, 1`);
 });
 
 // JavaScript to calculate and fix the container width
