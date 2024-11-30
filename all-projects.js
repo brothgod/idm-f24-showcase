@@ -11,7 +11,7 @@ function separateAndPlaceProjects(jsonData) {
     projectList.push(item);
   });
 
-  projectList.sort((a, b) => a.first_name.localeCompare(b.first_name));
+  projectList.sort((a, b) => a.last_name.localeCompare(b.last_name));
   projects = generateProjects(projectList, "all-projects");
   placeProjectsRandomly();
   console.log(projects);
