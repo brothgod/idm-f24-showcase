@@ -55,23 +55,73 @@ function toggleProjectsAbout() {
   tools.classList.toggle("hidden");
 }
 
-function readAloud() {
-  // Get the text from the div
+let utterance; // Holds the SpeechSynthesisUtterance instance
+let isSpeaking = false; // Tracks if the speech is ongoing
+let isPaused = false; // Tracks if speech is paused
+
+// Initialize the speech synthesis
+function initializeSpeech() {
   const text = document.getElementById("about").innerText;
 
-  // Check if speech synthesis is available
-  if ("speechSynthesis" in window) {
-    // Create a new speech synthesis instance
-    const utterance = new SpeechSynthesisUtterance(text);
+  // Create a new speech utterance instance
+  utterance = new SpeechSynthesisUtterance(text);
 
-    // Optionally set some properties (like voice, pitch, rate)
-    utterance.voice = speechSynthesis.getVoices()[0]; // Choose the first available voice
-    utterance.pitch = 1; // Set pitch (0 = low, 2 = high)
-    utterance.rate = 1; // Set speed (0.1 = slow, 1 = normal, 2 = fast)
+  // Optional: Configure voice, pitch, and rate
+  utterance.voice = speechSynthesis.getVoices()[0];
+  utterance.pitch = 1; // Default pitch
+  utterance.rate = 1; // Default speed
 
-    // Speak the text
+  // Reset flags when the utterance ends
+  utterance.onend = () => {
+    isSpeaking = false;
+    isPaused = false;
+    updateButtons();
+  };
+}
+
+// Start or stop the speech
+function toggleStartStop() {
+  if (!isSpeaking) {
+    // Start speech
+    initializeSpeech();
     speechSynthesis.speak(utterance);
+    isSpeaking = true;
+    isPaused = false;
   } else {
-    alert("Sorry, your browser does not support speech synthesis.");
+    // Stop speech
+    speechSynthesis.cancel();
+    isSpeaking = false;
+    isPaused = false;
+  }
+  updateButtons();
+}
+
+// Play or pause the speech
+function togglePlayPause() {
+  if (isPaused) {
+    // Resume speech
+    speechSynthesis.resume();
+    isPaused = false;
+  } else {
+    // Pause speech
+    speechSynthesis.pause();
+    isPaused = true;
+  }
+  updateButtons();
+}
+
+// Update button states and text
+function updateButtons() {
+  const startStopButton = document.getElementById("startStopRead");
+  const playPauseButton = document.getElementById("playPauseRead");
+
+  if (isSpeaking) {
+    startStopButton.value = "stop";
+    playPauseButton.disabled = false; // Enable Play/Pause when speech is active
+    playPauseButton.value = isPaused ? "play" : "pause";
+  } else {
+    startStopButton.value = "read aloud";
+    playPauseButton.disabled = true; // Disable Play/Pause when speech is inactive
+    playPauseButton.value = "play";
   }
 }

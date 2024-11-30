@@ -80,10 +80,17 @@
           creative, the thoughtful, the technical, and the innovative.
         </p>
         <input
-          id="read"
+          id="startStopRead"
           type="button"
           value="read aloud"
-          onclick="readAloud()"
+          onclick="toggleStartStop()"
+        />
+        <input
+          id="playPauseRead"
+          type="button"
+          value="play"
+          onclick="togglePlayPause()"
+          disabled
         />
         <a id="closePopup" onclick="toggleProjectsAbout()"
           >– back to projects —</a
