@@ -40,31 +40,6 @@ function initPage() {
         linkA.href = foundElement.project_site;
         link.appendChild(linkA);
 
-        document.getElementById("description").textContent =
-          foundElement.description;
-
-        if (foundElement.keywords !== "")
-          document.getElementById("keywords").textContent =
-            "Keywords: " + foundElement.keywords;
-        else document.getElementById("keywords").remove();
-
-        // document.getElementById("personal-link").textContent =
-        //   foundElement.portfolio_link;
-        if (foundElement.personal_site !== "") {
-          document.getElementById("personal-link").textContent =
-            "view their portfolio";
-          document.getElementById("personal-link").href =
-            foundElement.personal_site;
-        }
-        document
-          .getElementById("personal-link")
-          .setAttribute("target", "_blank");
-
-        document.getElementById("linkedin").textContent = foundElement.linkedin;
-        // document.getElementById("linkedin").textContent = "linkedin";
-        document.getElementById("linkedin").href = foundElement.linkedin;
-        document.getElementById("linkedin").setAttribute("target", "_blank");
-
         var mainImg = document.getElementById("main-img");
         if (foundElement.hasOwnProperty("main_image")) {
           if (foundElement.main_image.endsWith(".mov")) {
@@ -91,6 +66,40 @@ function initPage() {
             mainImg.childNodes[0].src = foundElement.main_image;
           }
         }
+
+        document.getElementById("description").textContent =
+          foundElement.description;
+
+        if (foundElement.personal_site !== "") {
+          [...document.getElementsByClassName("personal-link")].forEach(
+            (e) => (e.textContent = "view their portfolio, ")
+          );
+          [...document.getElementsByClassName("personal-link")].forEach(
+            (e) => (e.href = foundElement.personal_site)
+          );
+        }
+        [...document.getElementsByClassName("personal-link")].forEach((e) =>
+          e.setAttribute("target", "_blank")
+        );
+
+        if (foundElement.linkedin !== "") {
+          [...document.getElementsByClassName("linkedin")].forEach(
+            (e) => (e.textContent = "linkedin")
+          );
+          [...document.getElementsByClassName("linkedin")].forEach(
+            (e) => (e.href = foundElement.linkedin)
+          );
+          [...document.getElementsByClassName("linkedin")].forEach((e) =>
+            e.setAttribute("target", "_blank")
+          );
+        }
+
+        //Keywords
+        // if (foundElement.keywords !== "")
+        //   [...document.getElementsByClassName("keywords")].forEach(
+        //     (e) => (e.textContent = "Keywords: " + foundElement.keywords)
+        //   );
+
         // var suppImg = document.getElementById("supp-img");
         // if (foundElement.hasOwnProperty("supp_path")) {
         //   suppImg.childNodes[0].src = foundElement.supp_path;
@@ -107,13 +116,16 @@ function initPage() {
         //   });
         // }
 
-        var relatedProjects = document.getElementById("related-projects");
-        foundElement.related_projects.forEach(function (proj, index) {
-          var a = document.createElement("a");
-          a.href = "/project.html?id=" + proj;
-          a.textContent = proj + ", ";
-          relatedProjects.appendChild(a);
-        });
+        [...document.getElementsByClassName("related-projects")].forEach(
+          (e) => {
+            foundElement.related_projects.forEach(function (proj, index) {
+              var a = document.createElement("a");
+              a.href = "/project.html?id=" + proj;
+              a.textContent = proj + ", ";
+              e.appendChild(a);
+            });
+          }
+        );
       } else {
         window.location.href = "/index.html";
         console.log("Element not found");

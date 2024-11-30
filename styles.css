@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: BM_Pixel;
-  src: url(BM_Pixel.otf) format("truetype");
+  font-family: Diatype;
+  src: url(diatype.otf) format("truetype");
 }
 
 html,
@@ -222,12 +222,18 @@ body {
   grid-area: project-top;
 }
 
+.project-right {
+  grid-area: project-right;
+  position: sticky;
+  top: 2em;
+}
+
 .project-bottom {
   grid-area: project-bottom;
 }
 
-.project-right {
-  grid-area: project-right;
+#bottom-details {
+  display: none;
 }
 
 #main-img img,
@@ -259,13 +265,12 @@ video {
     grid-area: project-top;
   }
 
-  .project-bottom {
-    grid-area: project-bottom;
+  #bottom-details {
+    display: block;
   }
 
-  .project-right {
-    grid-area: project-right;
-    /* text-align: center; */
+  #right-details {
+    display: none;
   }
 }
 
