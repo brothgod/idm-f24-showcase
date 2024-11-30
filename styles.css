@@ -1,16 +1,22 @@
 @font-face {
-  font-family: Daydream;
-  src: url(Daydream.ttf) format("truetype");
+  font-family: Dokdo;
+  src: url(Dokdo.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: BM_Pixel;
-  src: url(BM_Pixel.otf) format("truetype");
+  font-family: FreckleFace;
+  src: url(FreckleFace.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(diatype.otf) format("truetype");
 }
 
 html,
 body {
   height: 100%;
+  font-family: Diatype;
   margin: 0;
 }
 
@@ -25,20 +31,26 @@ body {
 }
 
 #logo {
-  /* font-family: BM_Pixel; */
-  font-family: Daydream;
-  color: aliceblue;
-  font-size: 5vw;
-  text-align: right;
-  /* text-shadow: 2px 2px 2px #404040; */
-
-  color: #404040;
+  font-family: Dokdo;
+  font-size: 100px;
+  color: black;
 }
 
 #sidebar {
   grid-area: 1 / 2 / 1 / 2;
   overflow: hidden; /* Prevent all scrolling */
   margin-right: 10px;
+  text-align: center;
+}
+
+#about-button {
+  color: black;
+  cursor: crosshair;
+}
+
+#random-button {
+  color: black;
+  cursor: crosshair;
 }
 
 .toggle-element {
@@ -196,7 +208,7 @@ body {
 
 .project-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
   grid-auto-columns: 1fr;
   gap: 1em 2em;
@@ -233,14 +245,14 @@ video {
 }
 
 /* smaller screen */
-@media (max-width: 1200px) {
+@media (max-width: 850px) {
   .project-body {
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1em 1em;
-    grid-template-areas: "project-top" "project-right" "project-bottom";
+    grid-template-areas: "project-right" "project-top" "project-bottom";
   }
 
   .project-top {
@@ -253,6 +265,7 @@ video {
 
   .project-right {
     grid-area: project-right;
+    /* text-align: center; */
   }
 }
 

@@ -9,29 +9,27 @@
   <body>
     <div id="container">
       <div id="sidebar">
-        <h1 id="logo">IDM <br />F24</h1>
+        <h1 id="logo">idm<br>f24</h1>
         <div id="tools">
-          <p align="right">
-            <input type="button" value="?" onclick="toggleProjectsAbout()" />
-          </p>
-          <p align="right">
-            <input type="button" value="random" />
-          </p>
-          <p align="right">
+          <p>
+            <div id="about-button" onclick="toggleProjectsAbout()">about
+            </div></p>
+          <p id="random-button">random</p>
+          <p>
             <input
-              id="refresh"
-              type="button"
-              value="↻"
-              onclick="placeProjectsRandomly()"
-            />
-            <input
-              id="place-projects"
-              type="button"
-              value="organize"
-              onclick="organizeProjects()"
-            />
+            id="refresh"
+            type="button"
+            value="↻"
+            onclick="placeProjectsRandomly()"
+          />
+          <input
+            id="place-projects"
+            type="button"
+            value="organize"
+            onclick="organizeProjects()"
+          />
           </p>
-          <p align="right">
+          <p>
             <a
               id="colorDisplay"
               style="
@@ -50,9 +48,9 @@
               value="0"
             />
           </p>
-          <p align="right">
+          <p>
             <input type="checkbox" id="toggle" />
-            Switch Image and Titles
+            switch image and titles
           </p>
         </div>
       </div>

@@ -23,7 +23,7 @@ function initPage() {
         console.log("Element found:", foundElement);
         document.title = full_name;
         document.getElementById("title").textContent = foundElement.title;
-        document.getElementById("name").textContent = full_name;
+        document.getElementById("name").textContent = "by " + full_name;
         let year = "";
         if (foundElement.year === "Grad (Thesis Project)") {
           year = "Graduate Thesis";
