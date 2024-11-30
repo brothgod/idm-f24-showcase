@@ -1,16 +1,22 @@
 @font-face {
-  font-family: Daydream;
-  src: url(Daydream.ttf) format("truetype");
+  font-family: Dokdo;
+  src: url(Dokdo.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: BM_Pixel;
-  src: url(BM_Pixel.otf) format("truetype");
+  font-family: FreckleFace;
+  src: url(FreckleFace.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Diatype;
+    src: url(diatype.otf) format("truetype");
 }
 
 html,
 body {
   height: 100%;
+  font-family: Diatype;
 }
 
 #container {
@@ -23,18 +29,29 @@ body {
 }
 
 #logo {
-  /* font-family: BM_Pixel; */
-  font-family: Daydream;
-  color: aliceblue;
-  font-size: 5vw;
-  text-align: right;
-  /* text-shadow: 2px 2px 2px #404040; */
-
-  color: #404040;
+  font-family: Dokdo;
+  font-size: 100px;
+  color: black;
 }
 
 #sidebar {
   grid-area: 1 / 2 / 1 / 2;
+  text-align: center
+}
+
+#about-button {
+  color: black;
+  cursor: crosshair;
+}
+
+#random-button {
+  color: black;
+  cursor: crosshair;
+}
+
+#refresh {
+  color: black;
+  cursor: crosshair;
 }
 
 .toggle-element {
