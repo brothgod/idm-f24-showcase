@@ -22,12 +22,6 @@ window.addEventListener("DOMContentLoaded", () => {
   allProjects.classList.remove("hidden");
   about.classList.add("hidden");
 
-  const containerWidth = container.offsetWidth; // Get initial width
-
-  // Set the fixed width
-  container.style.width = containerWidth + "px";
-  console.log(`Container width fixed at: ${containerWidth}px`);
-
   const logo = document.getElementById("logo");
   const fontSize = window.innerWidth * 0.05;
   logo.style.fontSize = fontSize + "px";

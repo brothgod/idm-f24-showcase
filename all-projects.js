@@ -68,13 +68,21 @@ function placeProjectsRandomly() {
   document.getElementById("refresh").style.visibility = "visible";
 }
 
-function setRandomPosition(project, winHeight, winWidth) {
-  var winWidth = document.getElementById("all-projects").clientWidth;
-  var winHeight = document.getElementById("all-projects").clientHeight;
-  randomTop = getRandomNumber(0, winHeight - 150);
-  randomLeft = getRandomNumber(0, winWidth - projectWidth);
-  project.style.top = randomTop + "px";
-  project.style.left = randomLeft + "px";
+const leftSection = document.getElementById("all-projects");
+const viewportWidth = window.innerWidth; // Get the width of the viewport
+const leftWidth = leftSection.offsetWidth; // Get the width of the left section
+const proportion = leftWidth / viewportWidth; // Calculate the proportion of the viewport taken up by the left section
+
+function setRandomPosition(project) {
+  let topBuffer = 5;
+  let leftBuffer = 5;
+  randomTop = getRandomNumber(topBuffer, 90 - topBuffer);
+  randomLeft = getRandomNumber(
+    leftBuffer * proportion,
+    proportion * 95 - leftBuffer * proportion
+  );
+  project.style.top = randomTop + "vh";
+  project.style.left = randomLeft + "vw";
 }
 
 function getRandomNumber(min, max) {
