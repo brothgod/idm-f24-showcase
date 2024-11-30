@@ -9,33 +9,30 @@
   <body>
     <div id="container">
       <div id="sidebar">
-        <h1 id="logo">idm<br>f24<br>show<br>case</h1>
+        <h1 class="logo">idm<br />f24</h1>
         <div id="tools">
-          <p>
-            <p>
-            <div id="about-button" onclick="toggleProjectsAbout()">about
-            </div></p>
-            <a
-              id="colorDisplay"
-              style="
-                display: inline-block;
-                width: 15px;
-                height: 15px;
-                background-color: hsl(0, 100%, 50%);
-              "
-            ></a>
-            <input
-              id="rainbowSlider"
-              type="range"
-              step="0.02"
-              max="360"
-              min="0"
-              value="0"
-            />
-          </p>
+          <div id="about-button" onclick="toggleProjectsAbout()">about</div>
+          <br />
+          <a
+            id="colorDisplay"
+            style="
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              background-color: hsl(0, 100%, 50%);
+            "
+          ></a>
+          <input
+            id="rainbowSlider"
+            type="range"
+            step="0.02"
+            max="360"
+            min="0"
+            value="0"
+          />
+          <br />
           <p id="random-button">random</p>
-          <p>
-            <input
+          <input
             id="refresh"
             type="button"
             value="↻"
@@ -47,12 +44,11 @@
             value="organize"
             onclick="organizeProjects()"
           />
-          </p>
-          <p>
-            <input type="checkbox" id="toggle" />
-            switch image and titles
-          </p>
+          <br />
+          <input type="checkbox" id="toggle" />
+          switch image and titles
         </div>
+        <h1 class="logo">show<br />case</h1>
       </div>
       <div id="about" class="toggle-element hidden">
         <p>

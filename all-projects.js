@@ -1,5 +1,3 @@
-var idmLogo = document.getElementById("logo");
-var idmLogoBoundingBox = idmLogo.getBoundingClientRect();
 var projectWidth = 125;
 var projects;
 

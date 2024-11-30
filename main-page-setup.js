@@ -24,10 +24,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // Make sure both elements are visible when page loads (reset states)
   allProjects.classList.remove("hidden");
   about.classList.add("hidden");
-
-  const logo = document.getElementById("logo");
-  const fontSize = window.innerWidth * 0.05;
-  logo.style.fontSize = fontSize + "px";
 });
 
 toggle.addEventListener("input", () => {
