@@ -49,11 +49,6 @@ body {
   cursor: crosshair;
 }
 
-#refresh {
-  color: black;
-  cursor: crosshair;
-}
-
 .toggle-element {
   position: relative;
   transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
@@ -193,7 +188,7 @@ body {
 
 .project-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
   grid-auto-columns: 1fr;
   gap: 1em 2em;
@@ -230,7 +225,7 @@ video {
 }
 
 /* smaller screen */
-@media (max-width: 1200px) {
+@media (max-width: 850px) {
   .project-body {
     display: grid;
     grid-auto-columns: 1fr;
