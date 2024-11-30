@@ -117,6 +117,7 @@ function initPage() {
       } else {
         window.location.href = "/index.html";
         console.log("Element not found");
+        document.getElementById("title").textContent = "Project not found :(";
       }
     });
 }
