@@ -11,6 +11,7 @@ slider.addEventListener("input", () => {
   display.style.backgroundColor = `hsl(${hue}, 100%, 50%)`; // Apply as HSL color
   projects.forEach((project) => {
     project.style.setProperty("--shadow-color", `${hue}, 100%, 50%, .25`);
+    project.style.setProperty("--text-color", `${hue}, 100%, 50%, 1`);
   });
 });
 

@@ -96,15 +96,30 @@ body {
   display: block;
 }
 
-.project-text {
+.project-image::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center the text */
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 125px 0px 0px hsl(var(--shadow-color, 0));
+}
+
+.project-text {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: hsl(var(--text-color, 0)) solid;
   font-size: 1rem;
   text-align: center;
+  justify-content: center;
+  align-items: center; /* Center vertically */
   opacity: 0; /* Hidden by default */
   transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
+  color: hsl(var(--text-color, 0));
+  background-color: white;
 }
 
 .project:hover .project-text {
@@ -141,14 +156,6 @@ body {
 }
 .project.show-text:hover .project-image {
   opacity: 1;
-}
-
-.project-image::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 125px 0px 0px hsl(var(--shadow-color, 0));
 }
 
 /* template formatting start */
