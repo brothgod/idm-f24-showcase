@@ -10,17 +10,23 @@ const tools = document.getElementById("tools");
 hueSlider.addEventListener("input", () => {
   const hue = hueSlider.value; // Slider value (0 to 360)
   projects.forEach((project) => {
+    if (project.style.getPropertyValue("--text-light") === "") {
+      project.style.setProperty("--text-light", `${lightSlider.value}%`);
+    }
     project.style.setProperty("--shadow-hue", hue);
     project.style.setProperty("--shadow-alpha", 0.25);
     project.style.setProperty("--text-hue", hue);
   });
   [...logo].forEach((e) => {
+    if (e.style.getPropertyValue("--text-light") === "") {
+      e.style.setProperty("--text-light", `${lightSlider.value}%`);
+    }
     e.style.setProperty("--text-hue", hue);
   });
 });
 
 lightSlider.addEventListener("input", () => {
-  const light = lightSlider.value; // Slider value (0 to 180)
+  const light = lightSlider.value; // Slider value (20 to 80)
   projects.forEach((project) => {
     project.style.setProperty("--shadow-light", `${light}%`);
     project.style.setProperty("--shadow-alpha", 0.25);
