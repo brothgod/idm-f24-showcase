@@ -40,7 +40,7 @@ body {
   margin: 0;
   margin-top: 5vh;
   line-height: 4vw;
-  color: hsl(var(--text-color, 0));
+  color: hsl(var(--text-hue, 0) 100% var(--text-light, 0%));
 }
 
 #sidebar {
@@ -48,6 +48,30 @@ body {
   overflow: hidden; /* Prevent all scrolling */
   margin-right: 10px;
   text-align: center;
+}
+
+#tools {
+  display: grid;
+  grid-template-areas: "buttons hue light";
+  grid-auto-flow: column;
+  align-items: center;
+  justify-items: center;
+  height: 40vh;
+}
+
+#buttons {
+  grid-area: buttons;
+  justify-self: center;
+  align-items: center;
+  display: block;
+}
+
+#hue-slider {
+  grid-area: hue;
+}
+
+#light-slider {
+  grid-area: light;
 }
 
 #about-button {
@@ -120,7 +144,13 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 125px 0px 0px hsl(var(--shadow-color, 0));
+  box-shadow: inset 125px 0px 0px
+    hsla(
+      var(--shadow-hue, 0),
+      100%,
+      var(--shadow-light, 50%),
+      var(--shadow-alpha, 0)
+    );
 }
 
 .project-text {
@@ -130,14 +160,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border: hsl(var(--text-color, 0)) solid 2px;
+  border: hsl(var(--text-hue, 0) 100% var(--text-light, 0%)) solid 2px;
   font-size: smaller;
   text-align: center;
   justify-content: center;
   align-items: center; /* Center vertically */
   opacity: 0; /* Hidden by default */
   transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
-  color: hsl(var(--text-color, 0));
+  color: hsl(var(--text-hue, 0) 100% var(--text-light, 0%));
   background-color: white;
 }
 
@@ -337,4 +367,10 @@ video {
   .tools {
     grid-area: tools;
   }
+}
+
+/* slider formatting */
+input[type="range"] {
+  writing-mode: vertical-lr;
+  align-self: stretch;
 }
