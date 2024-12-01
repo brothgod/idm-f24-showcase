@@ -1,5 +1,5 @@
 var projectWidth = 125;
-var projects;
+var projects = [];
 
 function separateAndPlaceProjects(jsonData) {
   // Separate jsonData into two lists based on the 'year' attribute
@@ -17,12 +17,11 @@ function separateAndPlaceProjects(jsonData) {
 
 function generateProjects(jsonData, containerId) {
   // Iterate through each JSON object
-  var projects = [];
   jsonData.forEach(function (item) {
     var a = document.createElement("a");
     a.classList.add("project");
-    var id = (item.first_name + item.last_name.substring(0, 1)).toLowerCase();
-    a.href = "project.html?id=" + id;
+    a.href = "project.html?id=" + item.id;
+    a.id = item.id;
 
     // Create an image element
     var imageDiv = document.createElement("div");

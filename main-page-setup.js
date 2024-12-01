@@ -62,6 +62,12 @@ function toggleImagesTitles() {
   }
 }
 
+function pickRandomProject() {
+  let i = Math.floor(Math.random() * projects.length);
+  let p = projects[i];
+  window.location.href = "project.html?id=" + p.id;
+}
+
 // Ensure elements are properly toggled between visible and hidden
 function toggleProjectsAbout() {
   // Check if elements are visible or hidden, and toggle the classes

@@ -11,11 +11,7 @@ function initPage() {
   fetch("student-info.json")
     .then((response) => response.json())
     .then((data) => {
-      let foundElement = data.find(
-        (item) =>
-          (item.first_name + item.last_name.substring(0, 1)).toLowerCase() ===
-          parsedSiteId
-      );
+      let foundElement = data.find((item) => item.id === parsedSiteId);
 
       // Check if the element was found
       if (foundElement) {
