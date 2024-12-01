@@ -28,7 +28,7 @@ function initPage() {
         if (foundElement.year === "Grad (Thesis Project)") {
           year = "Graduate Thesis";
         } else {
-          year = "Senior Thesis";
+          year = "Senior Project";
         }
         document.getElementById("year").textContent = year + " ";
         document.getElementById("medium").textContent = foundElement.medium;
