@@ -1,6 +1,5 @@
 const hueSlider = document.getElementById("hue-slider");
 const lightSlider = document.getElementById("light-slider");
-const display = document.getElementById("color-display");
 const toggle = document.getElementById("toggle");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
@@ -10,8 +9,6 @@ const tools = document.getElementById("tools");
 
 hueSlider.addEventListener("input", () => {
   const hue = hueSlider.value; // Slider value (0 to 360)
-  console.log(hue);
-  display.style.setProperty("--display-hue", hue);
   projects.forEach((project) => {
     project.style.setProperty("--shadow-hue", hue);
     project.style.setProperty("--shadow-alpha", 0.25);
@@ -24,9 +21,6 @@ hueSlider.addEventListener("input", () => {
 
 lightSlider.addEventListener("input", () => {
   const light = lightSlider.value; // Slider value (0 to 180)
-  console.log(light);
-
-  display.style.setProperty("--display-light", `${light}%`);
   projects.forEach((project) => {
     project.style.setProperty("--shadow-light", `${light}%`);
     project.style.setProperty("--shadow-alpha", 0.25);

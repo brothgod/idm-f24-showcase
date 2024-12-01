@@ -48,11 +48,11 @@ body {
 
 #tools {
   display: grid;
-  grid-template-areas: "buttons hue light" ". color color";
+  grid-template-areas: "buttons hue light";
   grid-auto-flow: column;
   align-items: center;
   justify-items: center;
-  height: 60vh;
+  height: 40vh;
 }
 
 #buttons {
@@ -68,14 +68,6 @@ body {
 
 #light-slider {
   grid-area: light;
-}
-
-#color-display {
-  grid-area: color;
-  background-color: hsl(var(--display-hue, 0) 100% var(--display-light, 50%));
-  height: 15px;
-  display: inline-block;
-  justify-self: stretch; /* Ensures horizontal stretching */
 }
 
 #about-button {
