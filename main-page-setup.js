@@ -46,19 +46,21 @@ window.addEventListener("DOMContentLoaded", () => {
   about.classList.add("hidden");
 });
 
-toggle.addEventListener("input", () => {
-  if (toggle.checked) {
+function toggleImagesTitles() {
+  if (toggle.value === "show titles") {
     projects.forEach((project) => {
       project.classList.remove("show-image");
       project.classList.add("show-text");
     });
+    toggle.value = "show images";
   } else {
     projects.forEach((project) => {
       project.classList.remove("show-text");
       project.classList.add("show-image");
     });
+    toggle.value = "show titles";
   }
-});
+}
 
 // Ensure elements are properly toggled between visible and hidden
 function toggleProjectsAbout() {
