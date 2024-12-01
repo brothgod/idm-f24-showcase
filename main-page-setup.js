@@ -1,20 +1,40 @@
-const slider = document.getElementById("rainbowSlider");
-const display = document.getElementById("colorDisplay");
+const hueSlider = document.getElementById("hue-slider");
+const lightSlider = document.getElementById("light-slider");
+const display = document.getElementById("color-display");
 const toggle = document.getElementById("toggle");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
 const allProjects = document.getElementById("all-projects");
-const logo = document.getElementById("logo");
+const logo = document.getElementsByClassName("logo");
 const tools = document.getElementById("tools");
 
-slider.addEventListener("input", () => {
-  const hue = slider.value; // Slider value (0 to 360)
-  display.style.backgroundColor = `hsl(${hue}, 100%, 50%)`; // Apply as HSL color
+hueSlider.addEventListener("input", () => {
+  const hue = hueSlider.value; // Slider value (0 to 360)
+  console.log(hue);
+  display.style.setProperty("--display-hue", hue);
   projects.forEach((project) => {
-    project.style.setProperty("--shadow-color", `${hue}, 100%, 50%, .25`);
-    project.style.setProperty("--text-color", `${hue}, 100%, 50%, 1`);
+    project.style.setProperty("--shadow-hue", hue);
+    project.style.setProperty("--shadow-alpha", 0.25);
+    project.style.setProperty("--text-hue", hue);
   });
-  logo.style.setProperty("--text-color", `${hue}, 100%, 50%, 1`);
+  [...logo].forEach((e) => {
+    e.style.setProperty("--text-hue", hue);
+  });
+});
+
+lightSlider.addEventListener("input", () => {
+  const light = lightSlider.value; // Slider value (0 to 180)
+  console.log(light);
+
+  display.style.setProperty("--display-light", `${light}%`);
+  projects.forEach((project) => {
+    project.style.setProperty("--shadow-light", `${light}%`);
+    project.style.setProperty("--shadow-alpha", 0.25);
+    project.style.setProperty("--text-light", `${light}%`);
+  });
+  [...logo].forEach((e) => {
+    e.style.setProperty("--text-light", `${light}%`);
+  });
 });
 
 // JavaScript to calculate and fix the container width

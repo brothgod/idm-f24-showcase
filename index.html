@@ -11,42 +11,45 @@
       <div id="sidebar">
         <h1 class="logo">idm<br />f24</h1>
         <div id="tools">
-          <div id="about-button" onclick="toggleProjectsAbout()">about</div>
-          <br />
-          <a
-            id="colorDisplay"
-            style="
-              display: inline-block;
-              width: 15px;
-              height: 15px;
-              background-color: hsl(0, 100%, 50%);
-            "
-          ></a>
+          <div id="buttons">
+            <div id="about-button" onclick="toggleProjectsAbout()">about</div>
+            <br />
+            <p id="random-button">random</p>
+            <input
+              id="refresh"
+              type="button"
+              value="↻"
+              onclick="placeProjectsRandomly()"
+            />
+            <input
+              id="place-projects"
+              type="button"
+              value="organize"
+              onclick="organizeProjects()"
+            />
+            <br />
+            <input type="checkbox" id="toggle" />
+          </div>
+          <a id="color-display"></a>
           <input
-            id="rainbowSlider"
+            id="hue-slider"
             type="range"
             step="0.02"
             max="360"
             min="0"
             value="0"
-          />
-          <br />
-          <p id="random-button">random</p>
-          <input
-            id="refresh"
-            type="button"
-            value="↻"
-            onclick="placeProjectsRandomly()"
+            width="30vw"
+            height="30vh"
           />
           <input
-            id="place-projects"
-            type="button"
-            value="organize"
-            onclick="organizeProjects()"
+            id="light-slider"
+            type="range"
+            step="0.02"
+            max="80"
+            min="20"
+            value="50"
           />
           <br />
-          <input type="checkbox" id="toggle" />
-          switch image and titles
         </div>
         <h1 class="logo">show<br />case</h1>
       </div>
