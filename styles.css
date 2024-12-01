@@ -17,7 +17,7 @@ html,
 body {
   height: 100%;
   font-family: Diatype;
-  margin: 0;
+  margin: 5;
 }
 
 #container {
@@ -176,9 +176,9 @@ body {
 /* template formatting start */
 
 #project-header {
-  margin: 3%;
-  /* margin-left: 20%;
-  margin-right: 20%; */
+  /* margin: 3%; */
+  margin-left: 3%;
+  margin-right: 3%;
   line-height: 1.7em;
   font-size: small;
 }
@@ -189,8 +189,9 @@ body {
 }
 
 #project-header a:hover {
-  background-color: #c0fdfb;
+  /* background-color: #c0fdfb; */
   color: #0d1321;
+  font-style: italic;
 }
 
 #title {
@@ -207,6 +208,32 @@ body {
 #right-contents {
   position: sticky;
   top: 2em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: none;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #ddd92a;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: medium;
+}
+
+li a:hover:not(.active) {
+  color: black;
+  font-style: italic;
 }
 
 .project-body {
@@ -254,7 +281,7 @@ video {
 }
 
 /* smaller screen */
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .project-body {
     display: grid;
     grid-auto-columns: 1fr;

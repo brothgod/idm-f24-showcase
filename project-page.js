@@ -33,12 +33,14 @@ function initPage() {
         document.getElementById("year").textContent = year + " ";
         document.getElementById("medium").textContent = foundElement.medium;
 
-        let link = document.getElementById("link");
-        let linkA = document.createElement("a");
-        // linkA.textContent = foundElement.project_link;
-        linkA.textContent = "view project";
-        linkA.href = foundElement.project_site;
-        link.appendChild(linkA);
+        if (foundElement.project_site != "") {
+          let link = document.getElementById("link");
+          let linkA = document.createElement("a");
+          linkA.textContent = "view project";
+          linkA.href = foundElement.project_site;
+          linkA.setAttribute("target", "_blank");
+          link.appendChild(linkA);
+        }
 
         var mainImg = document.getElementById("main-img");
         if (foundElement.hasOwnProperty("main_image")) {
@@ -72,7 +74,7 @@ function initPage() {
 
         if (foundElement.personal_site !== "") {
           [...document.getElementsByClassName("personal-link")].forEach(
-            (e) => (e.textContent = "view their portfolio, ")
+            (e) => (e.innerHTML = "portfolio ↗ &nbsp;")
           );
           [...document.getElementsByClassName("personal-link")].forEach(
             (e) => (e.href = foundElement.personal_site)
@@ -84,7 +86,7 @@ function initPage() {
 
         if (foundElement.linkedin !== "") {
           [...document.getElementsByClassName("linkedin")].forEach(
-            (e) => (e.textContent = "linkedin")
+            (e) => (e.textContent = "linkedin ↗")
           );
           [...document.getElementsByClassName("linkedin")].forEach(
             (e) => (e.href = foundElement.linkedin)
