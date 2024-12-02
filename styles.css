@@ -43,45 +43,72 @@ body {
   color: hsl(var(--text-hue, 0) 100% var(--text-light, 0%));
 }
 
+#logo-20anniv {
+  margin-top: 2rem;
+  margin-bottom: 5vh;
+  width: 15vw;
+  color: hsl(var(--text-hue, 0) 100% var(--text-light, 0%));
+}
+
 #sidebar {
   grid-area: 1 / 2 / 1 / 2;
   overflow: hidden; /* Prevent all scrolling */
-  margin-right: 10px;
+  /* margin-right: 10px; */
   text-align: center;
 }
 
-#tools {
+.tools {
   display: grid;
-  grid-template-areas: "buttons hue light";
-  grid-auto-flow: column;
-  align-items: center;
-  justify-items: center;
-  height: 40vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "hue light"
+    "buttons buttons";
+  /* height: 40vh; */
 }
 
 #buttons {
   grid-area: buttons;
-  justify-self: center;
-  align-items: center;
-  display: block;
+  margin-top: 5vh;
 }
 
 #hue-slider {
   grid-area: hue;
+  height: 35vh;
+  accent-color: black;
 }
 
 #light-slider {
   grid-area: light;
+  height: 35vh;
+  accent-color: black;
 }
 
-#about-button {
-  color: black;
-  cursor: crosshair;
+#about-button span {
+  color: white;
+  padding: 5px 10px;
+  background-color: black;
+  cursor: grab;
 }
 
-#random-button {
+#about-button span:hover {
+  font-style: italic;
   color: black;
-  cursor: crosshair;
+  background-color: white;
+}
+
+#random-button span {
+  color: white;
+  padding: 5px 10px;
+  background-color: black;
+  cursor: grab;
+}
+
+#random-button span:hover {
+  font-style: italic;
+  color: black;
+  background-color: white;
 }
 
 .toggle-element {
@@ -90,19 +117,29 @@ body {
 }
 
 #about {
+  font-size: medium;
+  margin-top: 2rem;
+  margin-left: 15vw;
+  margin-right: 15vw;
   grid-area: 1 / 1 / 1 / 1;
   text-align: center;
   cursor: pointer;
+  line-height: 1.5rem;
 }
 
 #about a {
-  color: #fb8b24;
+  text-decoration: none;
+  color: #ddd92a;
 }
 
 #about a:hover {
+  font-style: italic;
   margin: auto;
-  color: #ffeddf;
-  background-color: #fb8b24;
+  color: #ddd92a;
+}
+
+pre {
+  font-family: Diatype;
 }
 
 #all-projects {
@@ -214,7 +251,7 @@ body {
   margin-left: 3%;
   margin-right: 3%;
   line-height: 1.7em;
-  font-size: small;
+  font-size: 14px;
 }
 
 #project-header a {
@@ -230,7 +267,7 @@ body {
 
 #title {
   text-align: center;
-  font-size: medium;
+  font-size: 15px;
 }
 
 #name,
@@ -262,7 +299,7 @@ li a {
   text-align: center;
   padding: 10px 12px;
   text-decoration: none;
-  font-size: medium;
+  font-size: 15px;
 }
 
 li a:hover:not(.active) {

@@ -9,32 +9,9 @@
   <body>
     <div id="container">
       <div id="sidebar">
-        <h1 class="logo">idm<br />f24</h1>
+        <!-- <h1 class="logo">idm<br />f24</h1> -->
+        <img id="logo-20anniv" src="idm20-ver2-black.png" />
         <div id="tools">
-          <div id="buttons">
-            <div id="about-button" onclick="toggleProjectsAbout()">about</div>
-            <br />
-            <div id="random-button" onclick="pickRandomProject()">random</div>
-            <input
-              id="refresh"
-              type="button"
-              value="↻"
-              onclick="placeProjectsRandomly()"
-            />
-            <input
-              id="place-projects"
-              type="button"
-              value="organize"
-              onclick="organizeProjects()"
-            />
-            <br />
-            <input
-              type="button"
-              id="toggle"
-              value="show titles"
-              onclick="toggleImagesTitles()"
-            />
-          </div>
           <input
             id="hue-slider"
             type="range"
@@ -53,32 +30,94 @@
             min="20"
             value="50"
           />
+          <div id="buttons">
+            <div id="about-button" onclick="toggleProjectsAbout()">
+              <span>about</span>
+            </div>
+            <br />
+            <div id="random-button" onclick="pickRandomProject()">
+              <span>random</span>
+            </div>
+            <br />
+            <input
+              type="button"
+              id="toggle"
+              value="show titles"
+              style="
+                all: unset;
+                color: white;
+                padding: 5px 10px;
+                background-color: black;
+                cursor: grab;
+              "
+              onclick="toggleImagesTitles()"
+            />
+            <br />
+            <br />
+            <input
+              id="refresh"
+              type="button"
+              value="↻"
+              style="
+                all: unset;
+                color: white;
+                padding: 3px 10px;
+                background-color: black;
+                cursor: grab;
+              "
+              onclick="placeProjectsRandomly()"
+            />
+            <input
+              id="place-projects"
+              type="button"
+              value="organize"
+              style="
+                all: unset;
+                color: white;
+                padding: 5px 10px;
+                background-color: black;
+                cursor: grab;
+              "
+              onclick="organizeProjects()"
+            />
+            <br />
+          </div>
           <br />
         </div>
-        <h1 class="logo">show<br />case</h1>
+        <!-- <h1 class="logo">show<br />case</h1> -->
       </div>
       <div id="about" class="toggle-element hidden">
+        <p>what is idm?</p>
         <p>
-          What is IDM? The
-          <a href="http://idm.engineering.nyu.edu/"
-            >Integrated Design & Media Program (IDM)</a
+          the
+          <a href="http://idm.engineering.nyu.edu/" target="_blank"
+            >integrated design & media program (idm)</a
           >
           is a place that fosters creative practice, design research and
           multidisciplinary experimentation with emerging media technologies.
-          IDM is a ‘STEAM‘ program combining artistic inquiry with scientific
+        </p>
+        <p>
+          idm is a ‘steam‘ program combining artistic inquiry with scientific
           research and technological practice to explore the social, cultural
-          and ethical potentials of emerging technologies. We focus on how to
-          create new experiences with technologies but also on what is
-          worthmaking and why. In our academic programs, digital media is
-          explored as a spectrum of practices that range from computer
-          programming (for app development,software engineering, game
-          development and interaction design) to 2D and 3D graphics (for
-          human-computer interfaces, augmented reality, motion capture, and game
-          design & development)to photography, film, and audio (for
-          mediainstallations, performing arts research, and integration with
-          various mediums). Our students are artists, designers, and creative
-          technologists working in highly fluid industries that reward the
-          creative, the thoughtful, the technical, and the innovative.
+          and ethical potentials of emerging technologies.
+        </p>
+        <p>
+          we focus on how to create new experiences with technologies but also
+          on what is worthmaking and why.
+        </p>
+        <p>
+          in our academic programs, digital media is explored as a spectrum of
+          practices that range from computer programming (for app development,
+          software engineering, game development and interaction design) to 2D
+          and 3D graphics (for human-computer interfaces, augmented reality,
+          motion capture, and game design & development) to photography, film,
+          and audio (for mediainstallations, performing arts research, and
+          integration with various mediums).
+        </p>
+        <p>
+          our students are artists, designers, and creative technologists
+          working in highly fluid industries that reward the creative, the
+          thoughtful, the technical, and the innovative.
         </p>
         <input
           id="startStopRead"
@@ -93,9 +132,16 @@
           onclick="togglePlayPause()"
           disabled
         />
-        <a id="closePopup" onclick="toggleProjectsAbout()"
-          >– back to projects —</a
-        >
+        <br />
+        <br />
+        <p>
+          this year's fall 2024 showcase will be held <br />
+          friday december 14 | 5 to 8pm <br />
+          <br />
+          @ 370 jay street 2nd & 3rd floors <br />
+          brooklyn, ny 11201
+        </p>
+        <a id="closePopup" onclick="toggleProjectsAbout()">back to projects</a>
       </div>
       <div id="all-projects" class="toggle-element"></div>
     </div>
