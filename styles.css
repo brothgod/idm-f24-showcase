@@ -70,7 +70,7 @@ body {
 
 #buttons {
   grid-area: buttons;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 
 #hue-slider {
@@ -96,6 +96,12 @@ body {
   font-style: italic;
   color: black;
   background-color: white;
+}
+
+.span-button .disabled {
+  cursor: not-allowed;
+  background-color: gray;
+  pointer-events: none; /* Disables click events */
 }
 
 .toggle-element {

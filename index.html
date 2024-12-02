@@ -19,8 +19,6 @@
             max="360"
             min="0"
             value="0"
-            width="30vw"
-            height="30vh"
           />
           <input
             id="light-slider"
@@ -89,19 +87,12 @@
           working in highly fluid industries that reward the creative, the
           thoughtful, the technical, and the innovative.
         </p>
-        <input
-          id="startStopRead"
-          type="button"
-          value="read aloud"
-          onclick="toggleStartStop()"
-        />
-        <input
-          id="playPauseRead"
-          type="button"
-          value="play"
-          onclick="togglePlayPause()"
-          disabled
-        />
+        <div id="audio-buttons" class="span-button">
+          <span id="startStopRead" onclick="toggleStartStop()">read aloud</span>
+          <span id="playPauseRead" class="disabled" onclick="togglePlayPause()"
+            >play</span
+          >
+        </div>
         <br />
         <br />
         <p>

@@ -129,18 +129,17 @@ function togglePlayPause() {
   updateButtons();
 }
 
+const startStopButton = document.getElementById("startStopRead");
+const playPauseButton = document.getElementById("playPauseRead");
 // Update button states and text
 function updateButtons() {
-  const startStopButton = document.getElementById("startStopRead");
-  const playPauseButton = document.getElementById("playPauseRead");
-
   if (isSpeaking) {
-    startStopButton.value = "stop";
-    playPauseButton.disabled = false; // Enable Play/Pause when speech is active
-    playPauseButton.value = isPaused ? "play" : "pause";
+    startStopButton.textContent = "stop";
+    playPauseButton.classList.remove("disabled"); // Enable Play/Pause when speech is active
+    playPauseButton.textContent = isPaused ? "play" : "pause";
   } else {
-    startStopButton.value = "read aloud";
-    playPauseButton.disabled = true; // Disable Play/Pause when speech is inactive
-    playPauseButton.value = "play";
+    startStopButton.textContent = "read aloud";
+    playPauseButton.classList.add("disabled"); // Disable Play/Pause when speech is inactive
+    playPauseButton.textContent = "play";
   }
 }
