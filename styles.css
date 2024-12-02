@@ -17,7 +17,7 @@ html,
 body {
   height: 100%;
   font-family: Diatype;
-  margin: 5;
+  margin: 0;
 }
 
 #container {
@@ -112,12 +112,14 @@ body {
 #about {
   font-size: medium;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   margin-left: 15vw;
   margin-right: 15vw;
   grid-area: 1 / 1 / 1 / 1;
   text-align: center;
   cursor: pointer;
   line-height: 1.5rem;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 #about a {
