@@ -278,11 +278,6 @@ pre {
   text-align: center;
 }
 
-#right-contents {
-  position: sticky;
-  top: 2em;
-}
-
 ul {
   list-style-type: none;
   margin-top: 0;
@@ -327,8 +322,12 @@ li a:hover:not(.active) {
 
 .project-right {
   grid-area: project-right;
-  position: sticky;
   top: 2em;
+}
+
+#right-contents {
+  top: 2em;
+  position: sticky;
 }
 
 .project-bottom {
