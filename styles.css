@@ -52,7 +52,7 @@ body {
 
 #sidebar {
   grid-area: 1 / 2 / 1 / 2;
-  overflow: hidden; /* Prevent all scrolling */
+  overflow-y: auto; /* Prevent all scrolling */
   /* margin-right: 10px; */
   text-align: center;
 }
