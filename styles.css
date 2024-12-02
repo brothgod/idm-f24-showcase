@@ -112,9 +112,8 @@ body {
 #about {
   font-size: medium;
   margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 15vw;
-  margin-right: 15vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
   grid-area: 1 / 1 / 1 / 1;
   text-align: center;
   cursor: pointer;
