@@ -85,27 +85,14 @@ body {
   accent-color: black;
 }
 
-#about-button span {
+.span-button span {
   color: white;
   padding: 5px 10px;
   background-color: black;
   cursor: grab;
 }
 
-#about-button span:hover {
-  font-style: italic;
-  color: black;
-  background-color: white;
-}
-
-#random-button span {
-  color: white;
-  padding: 5px 10px;
-  background-color: black;
-  cursor: grab;
-}
-
-#random-button span:hover {
+.span-button span:hover {
   font-style: italic;
   color: black;
   background-color: white;
@@ -148,6 +135,7 @@ pre {
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
   grid-template-rows: auto;
   grid-auto-flow: row;
+  row-gap: 20px;
   align-items: center;
   justify-items: center;
   overflow-y: auto; /* Enable vertical scrolling */

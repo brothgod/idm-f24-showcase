@@ -31,56 +31,26 @@
             value="50"
           />
           <div id="buttons">
-            <div id="about-button" onclick="toggleProjectsAbout()">
-              <span>about</span>
+            <div id="about-button" class="span-button">
+              <span onclick="toggleProjectsAbout()">about</span>
             </div>
             <br />
-            <div id="random-button" onclick="pickRandomProject()">
-              <span>random</span>
+            <div id="random-button" class="span-button">
+              <span onclick="pickRandomProject()">random</span>
             </div>
             <br />
-            <input
-              type="button"
-              id="toggle"
-              value="show titles"
-              style="
-                all: unset;
-                color: white;
-                padding: 5px 10px;
-                background-color: black;
-                cursor: grab;
-              "
-              onclick="toggleImagesTitles()"
-            />
+            <div id="images-titles-button" class="span-button">
+              <span id="toggle-span" onclick="toggleImagesTitles()"
+                >show titles</span
+              >
+            </div>
             <br />
-            <br />
-            <input
-              id="refresh"
-              type="button"
-              value="↻"
-              style="
-                all: unset;
-                color: white;
-                padding: 3px 10px;
-                background-color: black;
-                cursor: grab;
-              "
-              onclick="placeProjectsRandomly()"
-            />
-            <input
-              id="place-projects"
-              type="button"
-              value="organize"
-              style="
-                all: unset;
-                color: white;
-                padding: 5px 10px;
-                background-color: black;
-                cursor: grab;
-              "
-              onclick="organizeProjects()"
-            />
-            <br />
+            <div id="place-projects" class="span-button">
+              <span onclick="placeProjectsRandomly()" id="refresh-span">↻</span>
+              <span onclick="organizeProjects()" id="place-projects-span"
+                >organize</span
+              >
+            </div>
           </div>
           <br />
         </div>

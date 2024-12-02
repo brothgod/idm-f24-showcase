@@ -1,3 +1,6 @@
+var placeProjectsSpan = document.getElementById("place-projects-span");
+var refreshSpan = document.getElementById("refresh-span");
+
 var projectWidth = 125;
 var projects = [];
 
@@ -59,10 +62,9 @@ function placeProjectsRandomly() {
     project.style.visibility = "visible";
   }
 
-  var placeProjects = document.getElementById("place-projects");
-  placeProjects.value = "organize";
-  placeProjects.onclick = organizeProjects;
-  document.getElementById("refresh").style.visibility = "visible";
+  placeProjectsSpan.textContent = "organize";
+  placeProjectsSpan.onclick = organizeProjects;
+  refreshSpan.style.visibility = "visible";
 }
 
 const leftSection = document.getElementById("all-projects");
@@ -147,10 +149,9 @@ function organizeProjects() {
     project.style.left = 0;
   });
 
-  var button = document.getElementById("place-projects");
-  button.value = "scatter";
-  button.onclick = placeProjectsRandomly;
-  document.getElementById("refresh").style.visibility = "hidden";
+  placeProjectsSpan.textContent = "scatter";
+  placeProjectsSpan.onclick = placeProjectsRandomly;
+  refreshSpan.style.visibility = "hidden";
 }
 
 // Fetch the JSON file

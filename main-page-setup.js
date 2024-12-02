@@ -1,6 +1,6 @@
 const hueSlider = document.getElementById("hue-slider");
 const lightSlider = document.getElementById("light-slider");
-const toggle = document.getElementById("toggle");
+const toggleSpan = document.getElementById("toggle-span");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
 const allProjects = document.getElementById("all-projects");
@@ -39,26 +39,24 @@ lightSlider.addEventListener("input", () => {
 
 // JavaScript to calculate and fix the container width
 window.addEventListener("DOMContentLoaded", () => {
-  toggle.checked = false;
-
   // Make sure both elements are visible when page loads (reset states)
   allProjects.classList.remove("hidden");
   about.classList.add("hidden");
 });
 
 function toggleImagesTitles() {
-  if (toggle.value === "show titles") {
+  if (toggleSpan.textContent === "show titles") {
     projects.forEach((project) => {
       project.classList.remove("show-image");
       project.classList.add("show-text");
     });
-    toggle.value = "show images";
+    toggleSpan.textContent = "show images";
   } else {
     projects.forEach((project) => {
       project.classList.remove("show-text");
       project.classList.add("show-image");
     });
-    toggle.value = "show titles";
+    toggleSpan.textContent = "show titles";
   }
 }
 
