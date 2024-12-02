@@ -111,7 +111,7 @@ body {
 
 #about {
   font-size: medium;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding-left: 15vw;
   padding-right: 15vw;
   grid-area: 1 / 1 / 1 / 1;
@@ -148,7 +148,8 @@ pre {
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
   margin-left: 15px;
-  margin-top: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .hidden {
