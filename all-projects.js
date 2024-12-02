@@ -48,9 +48,9 @@ function generateProjects(jsonData, containerId) {
 }
 
 function placeProjectsRandomly() {
+  allProjects.classList.toggle("hidden");
   for (var i = 0; i < projects.length; i++) {
     var project = projects[i];
-    project.style.visibility = "hidden";
     project.style.position = "absolute";
 
     var count = 0;
@@ -58,9 +58,8 @@ function placeProjectsRandomly() {
       setRandomPosition(project);
       count++;
     } while (touchingAnything(projects, i) && count < 300);
-
-    project.style.visibility = "visible";
   }
+  allProjects.classList.toggle("hidden");
 
   placeProjectsSpan.textContent = "organize";
   placeProjectsSpan.onclick = organizeProjects;
@@ -68,20 +67,15 @@ function placeProjectsRandomly() {
 }
 
 const leftSection = document.getElementById("all-projects");
-const viewportWidth = window.innerWidth; // Get the width of the viewport
-const leftWidth = leftSection.offsetWidth; // Get the width of the left section
-const proportion = leftWidth / viewportWidth; // Calculate the proportion of the viewport taken up by the left section
-
 function setRandomPosition(project) {
-  let topBuffer = 5;
-  let leftBuffer = 5;
-  randomTop = getRandomNumber(topBuffer, 90 - topBuffer);
+  const topBuffer = 250;
+  randomTop = getRandomNumber(topBuffer / window.innerHeight, 1);
   randomLeft = getRandomNumber(
-    leftBuffer * proportion,
-    proportion * 95 - leftBuffer * proportion
+    projectWidth / window.innerWidth,
+    leftSection.offsetWidth / window.innerWidth
   );
-  project.style.top = randomTop + "vh";
-  project.style.left = randomLeft + "vw";
+  project.style.top = `calc(${randomTop * 100}vh - ${topBuffer}px)`;
+  project.style.left = `calc(${randomLeft * 100}vw - ${projectWidth}px)`;
 }
 
 function getRandomNumber(min, max) {
