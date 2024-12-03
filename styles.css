@@ -338,6 +338,10 @@ li a:hover:not(.active) {
   display: none;
 }
 
+.related-project:hover {
+  cursor: pointer;
+}
+
 #main-img img,
 video {
   display: block;

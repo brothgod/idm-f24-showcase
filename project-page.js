@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", initPage);
+var related_projects = [];
 
 function initPage() {
   const queryString =
@@ -110,20 +111,20 @@ function initPage() {
           });
         }
 
-        [...document.getElementsByClassName("related-projects")].forEach(
-          (e) => {
-            foundElement.related_projects.forEach(function (proj, index) {
-              var a = document.createElement("a");
-              a.href = "/project.html?id=" + proj;
-              a.textContent = proj + ", ";
-              e.appendChild(a);
-            });
-          }
-        );
+        foundElement.related_projects.forEach(function (proj, index) {
+          related_projects.push(proj);
+        });
       } else {
         window.location.href = "/index.html";
         console.log("Element not found");
         document.getElementById("title").textContent = "Project not found :(";
       }
     });
+}
+
+function pickRelatedProject() {
+  if (related_projects.length)
+    window.location.href = `/project.html?id=${
+      related_projects[Math.floor(Math.random() * related_projects.length)]
+    }`;
 }
