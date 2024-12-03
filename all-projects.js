@@ -69,7 +69,7 @@ function placeProjectsRandomly() {
 const leftSection = document.getElementById("all-projects");
 function setRandomPosition(project) {
   const topBuffer = 215;
-  randomTop = getRandomNumber(topBuffer / window.innerHeight, 1);
+  randomTop = getRandomNumber(0, 1);
   randomLeft = getRandomNumber(
     projectWidth / window.innerWidth,
     leftSection.offsetWidth / window.innerWidth

@@ -17,7 +17,7 @@
     "instagram": "https://www.instagram.com/checocadena/",
     "videos": "https://www.youtube.com/@checocadena",
     "profile_image": "https://drive.google.com/open?id=1X-SEKWononMs5kDJrZa94qQEKkKCq3q5",
-    "related_projects": ["junyoungo", "aswadh", "checoc"],
+    "related_projects": ["junyoungo", "aswadh"],
     "id": "checoc"
   },
   {
@@ -79,7 +79,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1LzfBdH2DAJ5H3c2U54FhA9yiFWCDTRJ4",
-    "related_projects": [],
+    "related_projects": ["edwardj"],
     "id": "nehao"
   },
   {
@@ -258,7 +258,7 @@
     "medium": "Installation",
     "personal_site": "https://wp.nyu.edu/tandonschoolofengineering-seniorproject_jo2313_fa24/",
     "project_site": "https://wp.nyu.edu/tandonschoolofengineering-seniorproject_jo2313_fa24/",
-    "description": "Synesthesia Studio\" emerged from my fascination with the intersection of color, sound, and emotion. Inspired by the phenomenon of synesthesia, this project invites viewers to explore an immersive experience where the color of their clothing translates into a unique blend of visuals and audio. Inside a darkened and personal space, each participant\u2019s clothing color is detected, triggering a video and sound aligned with that color. By merging art and technology, \"Synesthesia Studio\" creates a personal, sensory-driven interaction, allowing participants to experience the moods and atmospheres that colors can evoke. This work transforms everyday choices into a meaningful and reflective sensory experience.",
+    "description": "\"Synesthesia Studio\" emerged from my fascination with the intersection of color, sound, and emotion. Inspired by the phenomenon of synesthesia, this project invites viewers to explore an immersive experience where the color of their clothing translates into a unique blend of visuals and audio. Inside a darkened and personal space, each participant\u2019s clothing color is detected, triggering a video and sound aligned with that color. By merging art and technology, \"Synesthesia Studio\" creates a personal, sensory-driven interaction, allowing participants to experience the moods and atmospheres that colors can evoke. This work transforms everyday choices into a meaningful and reflective sensory experience.",
     "main_image": "./main-images\\main-junyoung.jpg",
     "supp_images": [],
     "keywords": "Interaction Design, Music Production, Inclusivity",
@@ -485,7 +485,7 @@
     "title": "My Music and Emotions throughout College.",
     "year": "Undergrad (Senior Project)",
     "medium": "Installation",
-    "personal_site": "jarennawy.com",
+    "personal_site": "https://jarennawy.com/",
     "project_site": "",
     "description": "",
     "main_image": null,
