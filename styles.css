@@ -70,7 +70,7 @@ body {
 
 #buttons {
   grid-area: buttons;
-  margin-top: 3vh;
+  margin-top: 6vh;
 }
 
 #hue-slider {
