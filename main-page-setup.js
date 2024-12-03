@@ -66,9 +66,21 @@ function pickRandomProject() {
   window.location.href = "project.html?id=" + p.id;
 }
 
+const sidebar = document.getElementById("sidebar");
 // Ensure elements are properly toggled between visible and hidden
 function toggleProjectsAbout() {
   // Check if elements are visible or hidden, and toggle the classes
+  if (about.classList.contains("hidden")) {
+    console.log("test1");
+    setTimeout(function () {
+      sidebar.addEventListener("click", toggleProjectsAbout);
+    }, 300);
+  } else {
+    console.log("test");
+    setTimeout(function () {
+      sidebar.removeEventListener("click", toggleProjectsAbout);
+    }, 300);
+  }
   about.classList.toggle("hidden");
   allProjects.classList.toggle("hidden");
   tools.classList.toggle("hidden");
