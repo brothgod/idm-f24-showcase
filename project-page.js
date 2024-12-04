@@ -40,7 +40,7 @@ function initPage() {
         }
 
         var mainImg = document.getElementById("main-img");
-        if (foundElement.hasOwnProperty("main_image")) {
+        if (foundElement.main_image != null) {
           if (foundElement.main_image.endsWith(".mov")) {
             var videoContainer = document.createElement("video");
             videoContainer.setAttribute("controls", "");
