@@ -92,7 +92,7 @@ let isPaused = false; // Tracks if speech is paused
 
 // Initialize the speech synthesis
 function initializeSpeech() {
-  const text = document.getElementById("about").innerText;
+  const text = document.getElementById("about-read").innerText;
 
   // Create a new speech utterance instance
   utterance = new SpeechSynthesisUtterance(text);
