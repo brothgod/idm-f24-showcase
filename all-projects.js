@@ -47,7 +47,15 @@ function generateProjects(jsonData, containerId) {
   return projects;
 }
 
+var previousHeight = window.innerHeight;
+window.addEventListener("resize", () => {
+  if (window.innerHeight > previousHeight) {
+    placeProjectsRandomly();
+  }
+});
+
 function placeProjectsRandomly() {
+  previousHeight = window.innerHeight;
   allProjects.classList.toggle("hidden");
   for (var i = 0; i < projects.length; i++) {
     var project = projects[i];
@@ -69,14 +77,12 @@ function placeProjectsRandomly() {
 const leftSection = document.getElementById("all-projects");
 function setRandomPosition(project) {
   const topBuffer = 215;
-  randomTop = getRandomNumber(0, 1);
+  randomTop = getRandomNumber(topBuffer, window.innerHeight);
   randomLeft = getRandomNumber(
     projectWidth / window.innerWidth,
     leftSection.offsetWidth / window.innerWidth
   );
-  project.style.top = `calc(max(calc(${
-    randomTop * 100
-  }vh - ${topBuffer}px), 2rem)`;
+  project.style.top = `calc(max(calc(${randomTop}px - ${topBuffer}px), 2rem)`;
   project.style.left = `calc(${randomLeft * 100}vw - ${projectWidth}px)`;
 }
 
