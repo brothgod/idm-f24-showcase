@@ -88,7 +88,9 @@ function setRandomPosition(project) {
     leftSection.offsetWidth / window.innerWidth
   );
   project.style.top = `calc(max(calc(${randomTop}px - ${topBuffer}px), 2rem)`;
-  project.style.left = `calc(${randomLeft * 100}vw - ${projectWidth}px)`;
+  project.style.left = `calc(max(calc(${
+    randomLeft * 100
+  }vw - ${projectWidth}px), 1.5rem)`;
 }
 
 function getRandomNumber(min, max) {
