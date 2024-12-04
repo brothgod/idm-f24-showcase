@@ -178,6 +178,7 @@ pre {
 
 .project-image img {
   display: block;
+  filter: grayscale(100%) sepia(100%) hue-rotate(300deg) saturate(200%);
 }
 
 .project-image::before {
@@ -419,4 +420,10 @@ video {
 input[type="range"] {
   writing-mode: vertical-lr;
   align-self: stretch;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
