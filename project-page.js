@@ -68,36 +68,31 @@ function initPage() {
 
         document.getElementById("description").textContent =
           foundElement.description;
-
+        let personal_link = document.getElementsByClassName("personal-link");
+        let linkedin = document.getElementsByClassName("linkedin");
+        let flag = false;
         if (foundElement.personal_site !== "") {
-          [...document.getElementsByClassName("personal-link")].forEach(
-            (e) => (e.innerHTML = "portfolio ↗ &nbsp;")
-          );
-          [...document.getElementsByClassName("personal-link")].forEach(
-            (e) => (e.href = foundElement.personal_site)
-          );
+          [...personal_link].forEach((e) => {
+            e.innerHTML = "portfolio ↗ &nbsp;";
+            e.href = foundElement.personal_site;
+            e.setAttribute("target", "_blank");
+          });
+          flag = true;
         }
-        [...document.getElementsByClassName("personal-link")].forEach((e) =>
-          e.setAttribute("target", "_blank")
-        );
 
         if (foundElement.linkedin !== "") {
-          [...document.getElementsByClassName("linkedin")].forEach(
-            (e) => (e.textContent = "linkedin ↗")
-          );
-          [...document.getElementsByClassName("linkedin")].forEach(
-            (e) => (e.href = foundElement.linkedin)
-          );
-          [...document.getElementsByClassName("linkedin")].forEach((e) =>
-            e.setAttribute("target", "_blank")
-          );
+          [...linkedin].forEach((e) => {
+            e.textContent = "linkedin ↗";
+            e.href = foundElement.linkedin;
+            e.setAttribute("target", "_blank");
+          });
+          flag = true;
         }
 
-        //Keywords
-        // if (foundElement.keywords !== "")
-        //   [...document.getElementsByClassName("keywords")].forEach(
-        //     (e) => (e.textContent = "Keywords: " + foundElement.keywords)
-        //   );
+        if (flag)
+          [...linkedin].forEach((e) =>
+            e.appendChild(document.createElement("br"))
+          );
 
         var suppImg = document.getElementById("supp-img");
         if (
