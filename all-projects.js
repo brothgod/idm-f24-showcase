@@ -48,14 +48,19 @@ function generateProjects(jsonData, containerId) {
 }
 
 var previousHeight = window.innerHeight;
+var previousWidth = window.innerWidth;
 window.addEventListener("resize", () => {
-  if (window.innerHeight > previousHeight) {
+  if (
+    window.innerHeight > previousHeight ||
+    window.innerWidth > previousWidth
+  ) {
     placeProjectsRandomly();
   }
 });
 
 function placeProjectsRandomly() {
   previousHeight = window.innerHeight;
+  previousWidth = window.innerWidth;
   allProjects.classList.toggle("hidden");
   for (var i = 0; i < projects.length; i++) {
     var project = projects[i];
