@@ -1,5 +1,3 @@
-const hueSlider = document.getElementById("hue-slider");
-const lightSlider = document.getElementById("light-slider");
 const toggleSpan = document.getElementById("toggle-span");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
@@ -7,41 +5,12 @@ const allProjects = document.getElementById("all-projects");
 const logo = document.getElementsByClassName("logo");
 const tools = document.getElementById("tools");
 
-hueSlider.addEventListener("input", () => {
-  const hue = hueSlider.value; // Slider value (0 to 360)
-  projects.forEach((project) => {
-    if (project.style.getPropertyValue("--text-light") === "") {
-      project.style.setProperty("--text-light", `${lightSlider.value}%`);
-    }
-    project.style.setProperty("--shadow-hue", `${hue}deg`); // hue);
-    project.style.setProperty("--shadow-alpha", 0.25);
-    project.style.setProperty("--text-hue", hue);
-  });
-  [...logo].forEach((e) => {
-    if (e.style.getPropertyValue("--text-light") === "") {
-      e.style.setProperty("--text-light", `${lightSlider.value}%`);
-    }
-    e.style.setProperty("--text-hue", hue);
-  });
-});
-
-lightSlider.addEventListener("input", () => {
-  const light = lightSlider.value; // Slider value (20 to 80)
-  projects.forEach((project) => {
-    project.style.setProperty("--shadow-light", `${light}%`);
-    project.style.setProperty("--shadow-alpha", 0.25);
-    project.style.setProperty("--text-light", `${light}%`);
-  });
-  [...logo].forEach((e) => {
-    e.style.setProperty("--text-light", `${light}%`);
-  });
-});
-
 // JavaScript to calculate and fix the container width
 window.addEventListener("DOMContentLoaded", () => {
   // Make sure both elements are visible when page loads (reset states)
   allProjects.classList.remove("hidden");
   about.classList.add("hidden");
+  createColorControls();
 });
 
 function toggleImagesTitles() {
@@ -64,6 +33,46 @@ function pickRandomProject() {
   let i = Math.floor(Math.random() * projects.length);
   let p = projects[i];
   window.location.href = "project.html?id=" + p.id;
+}
+
+const colors = [
+  "red",
+  "orange",
+  "melon",
+  "green",
+  "olive",
+  "teal",
+  "blue",
+  "purple",
+  "pink",
+];
+const colorControls = document.getElementById("colorControls");
+function createColorControls() {
+  colors.forEach((color) => {
+    let c = document.createElement("div");
+    c.id = `riso-${color}`;
+    c.classList.add("span-button");
+    let s = document.createElement("span");
+    s.onclick = () => {
+      changeColor(color);
+    };
+    s.textContent = color;
+
+    c.appendChild(s);
+    colorControls.appendChild(c);
+  });
+}
+
+function changeColor(color) {
+  allProjects.classList.toggle("hidden");
+  images.forEach((image) => {
+    const baseSource = image.getAttribute("baseSrc");
+    const parts = baseSource.split(".");
+    parts.pop();
+    let filename = parts.join(".") + ".png";
+    image.src = filename.replaceAll("main", `${color}-main`);
+  });
+  allProjects.classList.toggle("hidden");
 }
 
 const sidebar = document.getElementById("sidebar");

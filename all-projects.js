@@ -3,6 +3,7 @@ var refreshSpan = document.getElementById("refresh-span");
 
 var projectWidth = 125;
 var projects = [];
+var images = [];
 
 function separateAndPlaceProjects(jsonData) {
   // Separate jsonData into two lists based on the 'year' attribute
@@ -32,6 +33,9 @@ function generateProjects(jsonData, containerId) {
     if (item.main_image === null) image.src = "./idm.jpg";
     else image.src = item.main_image;
     image.width = projectWidth;
+    image.id = item.id + "-image";
+    image.setAttribute("baseSrc", image.src);
+    images.push(image);
     imageDiv.classList.add("project-image");
     imageDiv.appendChild(image);
     a.appendChild(imageDiv);
