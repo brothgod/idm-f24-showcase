@@ -80,19 +80,6 @@ body {
   margin-top: 6vh;
 }
 
-#hue-slider {
-  grid-area: hue;
-  height: 35vh;
-  accent-color: black;
-  /* -webkit-appearance: slider-vertical; */
-}
-
-#light-slider {
-  grid-area: light;
-  height: 35vh;
-  accent-color: black;
-}
-
 .span-button span {
   color: white;
   padding: 5px 10px;
@@ -435,10 +422,4 @@ video {
 
   #about {
   }
-}
-
-/* slider formatting */
-input[type="range"] {
-  writing-mode: vertical-lr;
-  align-self: stretch;
 }
