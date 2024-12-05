@@ -13,7 +13,7 @@ hueSlider.addEventListener("input", () => {
     if (project.style.getPropertyValue("--text-light") === "") {
       project.style.setProperty("--text-light", `${lightSlider.value}%`);
     }
-    project.style.setProperty("--shadow-hue", hue);
+    project.style.setProperty("--shadow-hue", `${hue}deg`); // hue);
     project.style.setProperty("--shadow-alpha", 0.25);
     project.style.setProperty("--text-hue", hue);
   });
