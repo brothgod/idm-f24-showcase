@@ -184,7 +184,8 @@ pre {
 
 .project-image img {
   display: block;
-  /* filter: grayscale(100%) sepia(100%) hue-rotate(300deg) saturate(200%); */
+  filter: grayscale(100%) sepia(100%) hue-rotate(var(--shadow-hue, 0))
+    saturate(200%);
 }
 
 .project-image::before {
@@ -192,13 +193,13 @@ pre {
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 125px 0px 0px
+  /* box-shadow: inset 125px 0px 0px
     hsla(
       var(--shadow-hue, 0),
       100%,
       var(--shadow-light, 50%),
       var(--shadow-alpha, 0)
-    );
+    ); */
 }
 
 .project-text {
