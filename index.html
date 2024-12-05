@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IDM Showcase Fall 2024</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="p5.riso.js"></script>
   </head>
   <body>
     <div id="container">
       <div id="sidebar">
         <!-- <h1 class="logo">idm<br />f24</h1> -->
         <img id="logo-20anniv" src="idm20-ver2-black.png" />
+        <div id="riso-red" class="span-button">
+          <span onclick="changeColor()">red</span>
+        </div>
+        <br />
+        <div id="riso-blue" class="span-button">
+          <span onclick="">blue</span>
+        </div>
+        <br />
+        <div id="riso-yellow" class="span-button">
+          <span id="toggle-span" onclick="">yellow</span>
+        </div>
         <div id="tools">
-          <input
-            id="hue-slider"
-            type="range"
-            step="0.02"
-            max="360"
-            min="0"
-            value="0"
-          />
-          <input
-            id="light-slider"
-            type="range"
-            step="0.02"
-            max="80"
-            min="20"
-            value="50"
-          />
           <div id="buttons">
             <div id="about-button" class="span-button">
               <span onclick="toggleProjectsAbout()">about</span>
