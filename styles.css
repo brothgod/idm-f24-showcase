@@ -137,7 +137,7 @@ body {
 
 #about a:hover {
   margin: auto;
-  color: #ff69b4;
+  color: #ff5675;
   font-style: italic;
   font-size: 15px;
 }
@@ -185,7 +185,7 @@ pre {
 .project-image img {
   display: block;
   filter: grayscale(100%) sepia(100%) hue-rotate(var(--shadow-hue, 0))
-    saturate(200%);
+    saturate(150%);
 }
 
 .project-image::before {
@@ -390,7 +390,11 @@ video {
 
 /* template formatting end */
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+  body {
+    margin: 1rem;
+  }
+
   #container {
     display: none;
   }
@@ -406,20 +410,46 @@ video {
   .mq-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "main-content"
-      "tools";
+      "header"
+      "main-content";
+  }
+
+  .header {
+    grid-area: header;
+    margin-left: 0.5rem;
   }
 
   .main-content {
     grid-area: main-content;
+    margin-left: 0.5rem;
   }
 
-  .tools {
-    grid-area: tools;
+  #logo-20anniv {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    width: 8rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ddd92a;
+  }
+
+  #about {
   }
 }
 
