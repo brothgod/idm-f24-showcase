@@ -35,15 +35,15 @@ function pickRandomProject() {
 }
 
 const colors = [
+  { fileColor: "pink", rgb: [249, 132, 202] },
   { fileColor: "red", rgb: [255, 116, 119] },
   { fileColor: "orange", rgb: [255, 108, 47] },
   { fileColor: "melon", rgb: [255, 174, 59] },
-  { fileColor: "green", rgb: [103, 179, 70] },
   { fileColor: "olive", rgb: [180, 159, 41] },
+  { fileColor: "green", rgb: [103, 179, 70] },
   { fileColor: "teal", rgb: [0, 157, 165] },
   { fileColor: "blue", rgb: [98, 168, 229] },
   { fileColor: "purple", rgb: [157, 122, 210] },
-  { fileColor: "pink", rgb: [249, 132, 202] },
 ];
 const colorControls = document.getElementById("colorControls");
 const mobileColorControls = document.getElementById("mobileColorControls");
