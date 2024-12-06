@@ -36,29 +36,28 @@ function pickRandomProject() {
 }
 
 const colors = [
+  "pink",
   "red",
   "orange",
   "melon",
-  "green",
   "olive",
+  "green",
   "teal",
   "blue",
   "purple",
-  "pink",
 ];
 const colorControls = document.getElementById("colorControls");
 function createColorControls() {
   colors.forEach((color) => {
+    // Create the button container
     let c = document.createElement("div");
     c.id = `riso-${color}`;
-    c.classList.add("span-button");
-    let s = document.createElement("span");
-    s.onclick = () => {
-      changeColor(color);
-    };
-    s.textContent = color;
+    c.classList.add("span-colorbutton");
 
-    c.appendChild(s);
+    // Add the click event directly to the container
+    c.onclick = () => changeColor(color);
+
+    // Append the button to the controls container
     colorControls.appendChild(c);
   });
 }
