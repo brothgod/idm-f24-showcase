@@ -38,10 +38,6 @@ body {
   position: relative;
 }
 
-.mq-container {
-  display: none;
-}
-
 .logo {
   font-family: Dokdo;
   font-size: 5vw;
@@ -63,11 +59,10 @@ body {
   overflow-y: auto; /* Prevent all scrolling */
   /* margin-right: 10px; */
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+}
+
+.header {
+  display: none;
 }
 
 .tools {
@@ -118,6 +113,10 @@ body {
   margin: 0 auto;
 }
 
+#mobileColorControls {
+  display: none;
+}
+
 /* General button styles */
 .span-colorbutton {
   width: 1.5vw; /* Relative size based on viewport width */
@@ -132,39 +131,39 @@ body {
 }
 
 /* Specific styles for each color */
-#riso-pink:hover {
+.riso-pink:hover {
   background-color: #f984ca;
 }
 
-#riso-red:hover {
+.riso-red:hover {
   background-color: #ff7477;
 }
 
-#riso-orange:hover {
+.riso-orange:hover {
   background-color: #ff6633;
 }
 
-#riso-melon:hover {
+.riso-melon:hover {
   background-color: #ffae3b;
 }
 
-#riso-olive:hover {
+.riso-olive:hover {
   background-color: #b49f29;
 }
 
-#riso-green:hover {
+.riso-green:hover {
   background-color: #67b346;
 }
 
-#riso-teal:hover {
+.riso-teal:hover {
   background-color: #009da5;
 }
 
-#riso-blue:hover {
+.riso-blue:hover {
   background-color: #62a8e5;
 }
 
-#riso-purple:hover {
+.riso-purple:hover {
   background-color: #9d7ad2;
 }
 
@@ -256,6 +255,10 @@ body {
   transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
   color: var(--text-rgb, black);
   background-color: white;
+}
+
+.project-title {
+  display: none;
 }
 
 .project:hover .project-text {
@@ -428,35 +431,84 @@ video {
 
 @media (max-width: 600px) {
   body {
-    margin: 1rem;
+    margin: 0;
   }
 
   #container {
-    display: none;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header"
+      "main-content"
+      "footer";
+    overflow-y: auto;
   }
 
   #sidebar {
     display: none;
   }
 
-  #all-projects {
+  .tools {
     display: none;
   }
 
-  .mq-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "header"
-      "main-content";
+  .header {
+    display: block;
+    margin: 1rem;
   }
 
-  .header {
-    grid-area: header;
-    margin-left: 0.5rem;
+  #about {
+    grid-area: main-content;
+  }
+
+  #all-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-area: main-content;
+    overflow-y: visible;
+    overflow-x: visible;
+    padding: 5px;
+    margin-left: 0;
+  }
+
+  .project-image {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Ensure the container has a height */
+  }
+
+  .project-title {
+    display: flex;
+    text-align: center;
+    justify-content: center; /* Center horizontally */
+    font-size: small;
+    padding-top: 10px;
+  }
+
+  .project-text {
+    display: none;
+  }
+
+  .project:hover .project-text {
+    opacity: 0;
+  }
+
+  .project:hover .project-image {
+    opacity: 1;
+  }
+
+  .project.show-image:hover .project-image {
+    opacity: 1;
+  }
+
+  .project.show-image:hover .project-text {
+    opacity: 0;
   }
 
   .main-content {
@@ -485,6 +537,22 @@ video {
     color: #ddd92a;
   }
 
-  #about {
+  #mobileColorControls {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 3 columns for a grid layout */
+    gap: 1vw;
+    max-width: 100vw; /* Adjust width for smaller buttons */
+    margin: 0 auto;
+    position: sticky;
+    bottom: 0px;
+    background-color: white;
+    z-index: 10;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .span-colorbutton {
+    width: 9vw;
+    height: 9vw;
   }
 }

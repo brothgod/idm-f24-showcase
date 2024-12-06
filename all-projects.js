@@ -15,7 +15,11 @@ function separateAndPlaceProjects(jsonData) {
 
   projectList.sort((a, b) => a.last_name.localeCompare(b.last_name));
   projects = generateProjects(projectList, "all-projects");
-  placeProjectsRandomly();
+  if (window.innerWidth > 600) {
+    placeProjectsRandomly();
+  } else {
+    organizeProjects;
+  }
   console.log(projects);
 }
 
@@ -45,8 +49,15 @@ function generateProjects(jsonData, containerId) {
     textDiv.classList.add("project-text");
     a.appendChild(textDiv);
 
+    var titleDiv = document.createElement("div");
+    const lineBreak = document.createElement("br");
+    titleDiv.appendChild(lineBreak);
+    titleDiv.textContent = item.title;
+    titleDiv.classList.add("project-title");
+    a.appendChild(titleDiv);
+
     document.getElementById(containerId).appendChild(a);
-    projects.push(a);
+    if (containerId === "all-projects") projects.push(a);
   });
   return projects;
 }
@@ -59,6 +70,12 @@ window.addEventListener("resize", () => {
     window.innerWidth > previousWidth
   ) {
     placeProjectsRandomly();
+  }
+
+  if (window.innerWidth <= 600) {
+    organizeProjects();
+    if ((document.getElementById("toggle-span").textContent = "show images"))
+      toggleImagesTitles();
   }
 });
 

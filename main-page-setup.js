@@ -47,11 +47,12 @@ const colors = [
   { fileColor: "pink", rgb: [249, 132, 202] },
 ];
 const colorControls = document.getElementById("colorControls");
+const mobileColorControls = document.getElementById("mobileColorControls");
 function createColorControls() {
   colors.forEach((color) => {
     // Create the button container
     let c = document.createElement("div");
-    c.id = `riso-${color.fileColor}`;
+    c.classList.add(`riso-${color.fileColor}`);
     c.classList.add("span-colorbutton");
 
     // Add the click event directly to the container
@@ -59,6 +60,9 @@ function createColorControls() {
 
     // Append the button to the controls container
     colorControls.appendChild(c);
+    let c_2 = c.cloneNode(true);
+    c_2.onclick = () => changeColor(color);
+    mobileColorControls.appendChild(c_2);
   });
 }
 
@@ -74,10 +78,16 @@ function changeColor(color) {
   allProjects.classList.toggle("hidden");
 
   let buttons = document.querySelectorAll(".span-button span");
-  console.log(buttons);
   for (let i = 0; i < buttons.length; i++) {
     let e = buttons[i];
     e.style.backgroundColor = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
+  }
+
+  let aTags = document.querySelectorAll("a");
+  for (let i = 0; i < aTags.length; i++) {
+    aTags[
+      i
+    ].style.color = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
   }
 
   projects.forEach((project) => {
@@ -93,15 +103,15 @@ const sidebar = document.getElementById("sidebar");
 function toggleProjectsAbout() {
   // Check if elements are visible or hidden, and toggle the classes
   if (about.classList.contains("hidden")) {
-    console.log("test1");
     setTimeout(function () {
       sidebar.addEventListener("click", toggleProjectsAbout);
     }, 300);
+    document.getElementById("mobile-about-home").textContent = "home";
   } else {
-    console.log("test");
     setTimeout(function () {
       sidebar.removeEventListener("click", toggleProjectsAbout);
     }, 300);
+    document.getElementById("mobile-about-home").textContent = "about";
   }
   about.classList.toggle("hidden");
   allProjects.classList.toggle("hidden");

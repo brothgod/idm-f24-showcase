@@ -8,11 +8,21 @@
   </head>
   <body>
     <div id="container">
+      <div class="header">
+        <ul>
+          <li>
+            <img id="logo-20anniv" src="idm20-ver2-black.png" />
+          </li>
+          <li style="float: right"><a href="/">register</a></li>
+          <li style="float: right">
+            <a id="mobile-about-home" onclick="toggleProjectsAbout()">about</a>
+          </li>
+        </ul>
+      </div>
       <div id="sidebar">
         <!-- <h1 class="logo">idm<br />f24</h1> -->
         <img id="logo-20anniv" src="idm20-ver2-black.png" />
         <div id="colorControls"></div>
-
         <div id="tools">
           <div id="buttons">
             <div id="about-button" class="span-button">
@@ -100,39 +110,9 @@
         <br />
       </div>
       <div id="all-projects" class="toggle-element"></div>
+      <div id="mobileColorControls"></div>
     </div>
     <script type="text/javascript" src="all-projects.js"></script>
     <script type="text/javascript" src="main-page-setup.js"></script>
-    <div class="mq-container">
-      <div class="header">
-        <ul>
-          <li>
-            <img id="logo-20anniv" src="idm20-ver2-black.png" />
-          </li>
-          <li style="float: right"><a href="/">register</a></li>
-          <li style="float: right"><a href="#about">about</a></li>
-        </ul>
-      </div>
-      <div class="main-content">
-        <div>the 2024 idm winter showcase will be held</div>
-        <br />
-        <div>graduate theses!</div>
-        <br />
-        <div>
-          <a href="https:google.com"
-            >&nbsp;&nbsp;&nbsp;→ Phenomenology of Placelessness by Hash
-            Effendi</a
-          >
-        </div>
-        <br />
-        <div>
-          <a href="https:google.com"
-            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ Ascent by Tracy Gaboyau</a
-          >
-        </div>
-        <br />
-        <div></div>
-      </div>
-    </div>
   </body>
 </html>
