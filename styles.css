@@ -541,7 +541,7 @@ video {
   #mobileColorControls {
     display: grid;
     grid-template-columns: repeat(9, 1fr); /* 3 columns for a grid layout */
-    gap: 1vw;
+    gap: 1.5vw;
     max-width: 100vw; /* Adjust width for smaller buttons */
     margin: 0 auto;
     position: sticky;
