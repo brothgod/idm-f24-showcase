@@ -24,6 +24,7 @@ function separateAndPlaceProjects(jsonData) {
 }
 
 function generateProjects(jsonData, containerId) {
+  let randColor;
   // Iterate through each JSON object
   jsonData.forEach(function (item) {
     var a = document.createElement("a");
@@ -59,6 +60,8 @@ function generateProjects(jsonData, containerId) {
     document.getElementById(containerId).appendChild(a);
     if (containerId === "all-projects") projects.push(a);
   });
+  randColor = colors[Math.floor(Math.random() * colors.length)];
+  changeColor(randColor);
   return projects;
 }
 
@@ -185,15 +188,17 @@ function organizeProjects() {
 }
 
 // Fetch the JSON file
-fetch("student-info.json")
-  .then((response) => response.json())
-  .then((data) => {
-    // Once the JSON data is fetched, you can work with it here
-    console.log(data); // For example, you can log it to the console
-    // You can also call a function to process the JSON data here
-    separateAndPlaceProjects(data);
-  })
-  .catch((error) => {
-    // Handle any errors that occur during the fetch
-    console.error("Error fetching JSON:", error);
-  });
+function fetchProjects() {
+  fetch("student-info.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Once the JSON data is fetched, you can work with it here
+      console.log(data); // For example, you can log it to the console
+      // You can also call a function to process the JSON data here
+      separateAndPlaceProjects(data);
+    })
+    .catch((error) => {
+      // Handle any errors that occur during the fetch
+      console.error("Error fetching JSON:", error);
+    });
+}

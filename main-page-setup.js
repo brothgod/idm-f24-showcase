@@ -2,7 +2,6 @@ const toggleSpan = document.getElementById("toggle-span");
 const about = document.getElementById("about");
 const container = document.getElementById("container");
 const allProjects = document.getElementById("all-projects");
-const logo = document.getElementsByClassName("logo");
 const tools = document.getElementById("tools");
 
 // JavaScript to calculate and fix the container width
@@ -64,8 +63,11 @@ function createColorControls() {
     c_2.onclick = () => changeColor(color);
     mobileColorControls.appendChild(c_2);
   });
+  fetchProjects();
 }
 
+let logo = document.getElementById("logo-20anniv");
+let logoMobile = document.getElementById("logo-20anniv-mobile");
 function changeColor(color) {
   allProjects.classList.toggle("hidden");
   images.forEach((image) => {
@@ -90,6 +92,10 @@ function changeColor(color) {
     ].style.color = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
   }
 
+  //Changes logo color
+  // logo.src = `./idm20-colored/${color.fileColor}.png`;
+  // logoMobile.src = `./idm20-colored/${color.fileColor}.png`;
+
   projects.forEach((project) => {
     project.style.setProperty(
       "--text-rgb",
@@ -97,6 +103,10 @@ function changeColor(color) {
     );
   });
 }
+
+colorControls.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
 
 const sidebar = document.getElementById("sidebar");
 // Ensure elements are properly toggled between visible and hidden

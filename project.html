@@ -7,52 +7,54 @@
     <title>IDM Spring24 Showcase</title>
   </head>
   <body>
-    <ul>
-      <li style="float: right"><a href="/">home</a></li>
-    </ul>
-    <div id="project-header">
-      <div id="title"></div>
-      <div id="name"></div>
-      <br />
-      <div id="qualifiers">
-        <span id="year"></span>
-        |
-        <span id="medium"></span>
-      </div>
-      <div id="link"></div>
-      <br />
-      <div class="project-body">
-        <div class="project-top">
-          <div id="main-img"><img src="idm.jpg" /></div>
+    <div id="project-page">
+      <ul>
+        <li style="float: right"><a href="/">home</a></li>
+      </ul>
+      <div id="project-header">
+        <div id="title"></div>
+        <div id="name"></div>
+        <br />
+        <div id="qualifiers">
+          <span id="year"></span>
+          |
+          <span id="medium"></span>
         </div>
-        <div class="project-right">
-          <div id="right-contents">
-            <div id="description"></div>
-            <div id="right-details">
-              <br />
+        <div id="link"></div>
+        <br />
+        <div class="project-body">
+          <div class="project-top">
+            <div id="main-img"><img src="idm.jpg" /></div>
+          </div>
+          <div class="project-right">
+            <div id="right-contents">
+              <div id="description"></div>
+              <div id="right-details">
+                <br />
+                <a class="personal-link"></a>
+                <a class="linkedin"></a>
+                <a class="related-project" onclick="pickRelatedProject()">
+                  view a similar project →
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-bottom">
+            <div id="supp-img"></div>
+            <div id="bottom-details">
               <a class="personal-link"></a>
               <a class="linkedin"></a>
               <a class="related-project" onclick="pickRelatedProject()">
                 view a similar project →
               </a>
+              <br />
+              <br />
             </div>
           </div>
         </div>
-        <div class="project-bottom">
-          <div id="supp-img"></div>
-          <div id="bottom-details">
-            <a class="personal-link"></a>
-            <a class="linkedin"></a>
-            <a class="related-project" onclick="pickRelatedProject()">
-              view a similar project →
-            </a>
-            <br />
-            <br />
-          </div>
-        </div>
       </div>
+      <br />
     </div>
-    <br />
   </body>
   <script src="project-page.js"></script>
 </html>
