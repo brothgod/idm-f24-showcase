@@ -51,7 +51,7 @@ function createColorControls() {
   colors.forEach((color) => {
     // Create the button container
     let c = document.createElement("div");
-    c.id = `riso-${color}`;
+    c.id = `riso-${color.fileColor}`;
     c.classList.add("span-colorbutton");
 
     // Add the click event directly to the container
