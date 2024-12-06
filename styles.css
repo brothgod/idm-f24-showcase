@@ -247,14 +247,14 @@ body {
   width: 100%;
   height: 100%;
   padding: 10% 10%;
-  border: hsl(var(--text-hue, 0) 100% var(--text-light, 0%)) solid 2px;
+  border: var(--text-rgb, black) solid 2px;
   font-size: smaller;
   text-align: center;
   justify-content: center;
   align-items: center; /* Center vertically */
   opacity: 0; /* Hidden by default */
   transition: opacity 0.3s ease; /* Add transition for smooth opacity toggle */
-  color: hsl(var(--text-hue, 0) 100% var(--text-light, 0%));
+  color: var(--text-rgb, black);
   background-color: white;
 }
 
