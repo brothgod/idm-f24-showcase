@@ -7,6 +7,17 @@ function initPage() {
       .search; /* Example: ?product=shirt&color=blue&newuser&size=m */
   const urlParams = new URLSearchParams(queryString);
   const parsedSiteId = urlParams.get("id"); // ?cat=something
+  const colors = [
+    { fileColor: "red", rgb: [255, 116, 119] },
+    { fileColor: "orange", rgb: [255, 108, 47] },
+    { fileColor: "melon", rgb: [255, 174, 59] },
+    { fileColor: "green", rgb: [103, 179, 70] },
+    { fileColor: "olive", rgb: [180, 159, 41] },
+    { fileColor: "teal", rgb: [0, 157, 165] },
+    { fileColor: "blue", rgb: [98, 168, 229] },
+    { fileColor: "purple", rgb: [157, 122, 210] },
+    { fileColor: "pink", rgb: [249, 132, 202] },
+  ];
 
   // Iterate through the array to find the element with the specific attribute
   fetch("student-info.json")
@@ -109,6 +120,13 @@ function initPage() {
         foundElement.related_projects.forEach(function (proj, index) {
           related_projects.push(proj);
         });
+        let randColor = colors[Math.floor(Math.random() * colors.length)];
+        let aTags = document.querySelectorAll("a");
+        for (let i = 0; i < aTags.length; i++) {
+          aTags[
+            i
+          ].style.color = `rgb(${randColor.rgb[0]},${randColor.rgb[1]},${randColor.rgb[2]})`;
+        }
       } else {
         window.location.href = "/index.html";
         console.log("Element not found");
