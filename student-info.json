@@ -38,24 +38,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "lizziee",
-      "franciscob",
-      "ruxiw",
-      "jerryf",
-      "noak",
-      "aswadh",
-      "emilyw",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["jerryf", "shanial"],
     "id": "gabic"
   },
   {
@@ -79,7 +62,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1LzfBdH2DAJ5H3c2U54FhA9yiFWCDTRJ4",
-    "related_projects": ["edwardj"],
+    "related_projects": ["edwardj", "shanial"],
     "id": "nehao"
   },
   {
@@ -100,20 +83,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=18LSQ0JMR_4QQ7y5G8YeiES_y9rHudud1",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["rosalyns", "edwardj", "nehao", "junyoungo"],
     "id": "shanial"
   },
   {
@@ -137,21 +107,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1R1JscOu4CspGnpEIQ6kPJ02pA9RBZzzJ",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "jerryf",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["nehao", "rosalyns", "edwardj"],
     "id": "rosalyns"
   },
   {
@@ -172,20 +128,7 @@
     "instagram": "https://www.instagram.com/_whynotchao_/",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["lizziee", "ruxiw"],
     "id": "chaua"
   },
   {
@@ -209,7 +152,7 @@
     "instagram": "79wang_",
     "videos": "",
     "profile_image": "",
-    "related_projects": ["gabic", "ruxiw", "jerryf", "edwardj", "alwynt"],
+    "related_projects": ["junyoungo", "shanial", "chaua", "junyoungo"],
     "id": "ruxiw"
   },
   {
@@ -230,23 +173,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=13M3uG826UX4H_K7uoLJX7874_AzmVNeb",
-    "related_projects": [
-      "gabic",
-      "lizziee",
-      "franciscob",
-      "jerryf",
-      "noak",
-      "aswadh",
-      "emilyw",
-      "shanial",
-      "tracyg",
-      "alwynt",
-      "rosalyns",
-      "junyoungo",
-      "edwardj",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["jerryf", "gabic", "edwardj"],
     "id": "tracyg"
   },
   {
@@ -267,21 +194,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "checoc",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["checoc", "kishar"],
     "id": "junyoungo"
   },
   {
@@ -302,21 +215,7 @@
     "instagram": "https://www.instagram.com/seonwoojeong/",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "ruxiw",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["nehao", "shanial"],
     "id": "edwardj"
   },
   {
@@ -341,20 +240,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1PCbIQ89Fo54X-vSj3IDEsL0SXLdsTScQ",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["alwynt", "aswadh"],
     "id": "noak"
   },
   {
@@ -375,7 +261,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=176UhZPmdSzhg_M7Mp7ewBcgsPWFqChUY",
-    "related_projects": ["checoc", "junyoungo"],
+    "related_projects": ["checoc", "junyoungo", "alwynt", "aswadh"],
     "id": "aswadh"
   },
   {
@@ -400,7 +286,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1K9Gknu_rOcNajcA3O-NdcWad-mW5RPoI",
-    "related_projects": ["hashe", "jamiel"],
+    "related_projects": ["jarenn", "franciscob", "edwardj"],
     "id": "hashe"
   },
   {
@@ -421,15 +307,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "lizziee",
-      "jerryf",
-      "ruxiw",
-      "tracyg",
-      "alwynt",
-      "rosalyns"
-    ],
+    "related_projects": ["gabic"],
     "id": "jerryf"
   },
   {
@@ -450,16 +328,7 @@
     "instagram": "https://www.instagram.com/bunnycat666/",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "lizziee",
-      "emilyw",
-      "jerryf",
-      "aswadh",
-      "jamiel",
-      "tracyg",
-      "alwynt"
-    ],
+    "related_projects": ["chaua", "nehao"],
     "id": "lizziee"
   },
   {
@@ -480,7 +349,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "",
-    "related_projects": [],
+    "related_projects": ["junyoungo", "checoc"],
     "id": "jarenn"
   },
   {
@@ -501,20 +370,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1I6dWz6RoHJ8-OszSDXPe-agc7sfQgFjn",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["checoc", "junyoungo", "tracyg"],
     "id": "xinrans"
   },
   {
@@ -535,7 +391,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=1i3oyTZCEKfOTWxdDEFfzWzXuX6xSQWai",
-    "related_projects": ["tracyg", "gabic", "emilyw", "lizziee"],
+    "related_projects": ["tracyg", "xinrans"],
     "id": "emilyw"
   },
   {
@@ -556,7 +412,7 @@
     "instagram": "https://www.instagram.com/jaceisms/",
     "videos": "",
     "profile_image": "https://drive.google.com/open?id=13gMzHHTJG-zCffWczAB08ctGi_NfVEkR",
-    "related_projects": ["hashe", "lizziee", "aswadh", "jamiel"],
+    "related_projects": ["lizziee"],
     "id": "jamiel"
   },
   {
@@ -577,7 +433,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "",
-    "related_projects": [],
+    "related_projects": ["checoc", "jarenn", "ruxiw"],
     "id": "kishar"
   },
   {
@@ -598,20 +454,7 @@
     "instagram": "",
     "videos": "",
     "profile_image": "",
-    "related_projects": [
-      "gabic",
-      "franciscob",
-      "noak",
-      "aswadh",
-      "shanial",
-      "tracyg",
-      "junyoungo",
-      "rosalyns",
-      "edwardj",
-      "alwynt",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["hashe", "xinrans"],
     "id": "franciscob"
   },
   {
@@ -643,23 +486,7 @@
     "instagram": "https://www.instagram.com/alwyntcha/",
     "videos": "https://www.youtube.com/watch?v=v4sBSQYVY8o  (Going to be updated)",
     "profile_image": "https://drive.google.com/open?id=1mVvhNafyXUyzXFXhFWeIY4YLUNXkM6qp",
-    "related_projects": [
-      "gabic",
-      "lizziee",
-      "franciscob",
-      "jerryf",
-      "noak",
-      "aswadh",
-      "ruxiw",
-      "shanial",
-      "tracyg",
-      "alwynt",
-      "rosalyns",
-      "junyoungo",
-      "edwardj",
-      "chaua",
-      "xinrans"
-    ],
+    "related_projects": ["noak", "aswadh"],
     "id": "alwynt"
   }
 ]
