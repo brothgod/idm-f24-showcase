@@ -15,7 +15,7 @@ function separateAndPlaceProjects(jsonData) {
 
   projectList.sort((a, b) => a.last_name.localeCompare(b.last_name));
   projects = generateProjects(projectList, "all-projects");
-  if (window.innerWidth > 600) {
+  if (window.innerWidth > 750) {
     placeProjectsRandomly();
   } else {
     organizeProjects;
@@ -75,7 +75,7 @@ window.addEventListener("resize", () => {
     placeProjectsRandomly();
   }
 
-  if (window.innerWidth <= 600) {
+  if (window.innerWidth <= 750) {
     organizeProjects();
     if ((document.getElementById("toggle-span").textContent = "show images"))
       toggleImagesTitles();

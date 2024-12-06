@@ -85,11 +85,29 @@ function changeColor(color) {
     e.style.backgroundColor = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
   }
 
+  // let aTags = document.querySelectorAll("a");
+  // for (let i = 0; i < aTags.length; i++) {
+  //   aTags[
+  //     i
+  //   ].style.color = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
+  // }
+
   let aTags = document.querySelectorAll("a");
+
   for (let i = 0; i < aTags.length; i++) {
-    aTags[
-      i
-    ].style.color = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
+    let aTag = aTags[i];
+
+    // Set the initial color
+    aTag.style.color = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
+
+    // Add hover effect
+    aTag.addEventListener("mouseover", function () {
+      aTag.style.color = "black"; // Change to black on hover
+    });
+
+    aTag.addEventListener("mouseout", function () {
+      aTag.style.color = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`; // Revert to original color
+    });
   }
 
   //Changes logo color
@@ -185,15 +203,24 @@ function togglePlayPause() {
 
 const startStopButton = document.getElementById("startStopRead");
 const playPauseButton = document.getElementById("playPauseRead");
+
 // Update button states and text
 function updateButtons() {
   if (isSpeaking) {
     startStopButton.textContent = "stop";
+
+    if (isPaused) {
+      playPauseButton.style.display = "inline"; // Show "continue" button
+      playPauseButton.textContent = "continue";
+    } else {
+      playPauseButton.style.display = "inline"; // Show "pause" button
+      playPauseButton.textContent = "pause";
+    }
     playPauseButton.classList.remove("disabled"); // Enable Play/Pause when speech is active
-    playPauseButton.textContent = isPaused ? "play" : "pause";
   } else {
     startStopButton.textContent = "read aloud";
-    playPauseButton.classList.add("disabled"); // Disable Play/Pause when speech is inactive
-    playPauseButton.textContent = "play";
+    playPauseButton.style.display = "none"; // Hide Play/Pause button
+    playPauseButton.textContent = "continue";
+    playPauseButton.classList.add("disabled"); // Ensure it's visually disabled
   }
 }

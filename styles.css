@@ -29,7 +29,7 @@ body {
 
 #container {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 5fr 1fr;
   grid-template-rows: 100%;
   height: 100vh;
   gap: 0px 0px;
@@ -71,16 +71,15 @@ body {
 .span-button span {
   color: white;
   padding: 5px 10px;
-  background-color: black;
   cursor: pointer;
-  font-size: 1vw;
+  font-size: medium;
 }
 
 .span-button span:hover {
   font-style: italic;
   color: white;
-  background-color: #ddd92a;
   font-size: large;
+  background-color: black;
 }
 
 .span-button .disabled {
@@ -182,9 +181,7 @@ body {
 
 #about a:hover {
   margin: auto;
-  color: #ff5675;
   font-style: italic;
-  font-size: 15px;
 }
 
 #all-projects {
@@ -419,7 +416,7 @@ video {
 
 /* template formatting end */
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   body {
     margin: 0;
   }
@@ -461,7 +458,7 @@ video {
     grid-area: main-content;
     overflow-y: visible;
     overflow-x: visible;
-    padding: 5px;
+    padding: 20px;
     margin-left: 0;
   }
 
@@ -472,12 +469,28 @@ video {
     height: 100%; /* Ensure the container has a height */
   }
 
+  .project-image img {
+    display: block;
+    width: 35vw;
+  }
+
+  .project-image img:hover {
+    width: 36vw;
+  }
+
   .project-title {
     display: flex;
     text-align: center;
     justify-content: center; /* Center horizontally */
     font-size: small;
     padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .project:hover {
+    font-style: italic;
   }
 
   .project-text {
@@ -503,7 +516,8 @@ video {
   #logo-20anniv-mobile {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
-    width: 8rem;
+    margin-left: 20px;
+    width: 25vw;
   }
 
   ul {
@@ -518,7 +532,10 @@ video {
 
   a {
     text-decoration: none;
-    color: #ddd92a;
+  }
+
+  a:hover {
+    color: black;
   }
 
   #mobileColorControls {
@@ -536,8 +553,8 @@ video {
   }
 
   .span-colorbutton {
-    width: 9vw;
-    height: 9vw;
+    width: 8vw;
+    height: 8vw;
   }
 
   #project-page {
