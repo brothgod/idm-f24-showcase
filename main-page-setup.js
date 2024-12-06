@@ -36,27 +36,27 @@ function pickRandomProject() {
 }
 
 const colors = [
-  "red",
-  "orange",
-  "melon",
-  "green",
-  "olive",
-  "teal",
-  "blue",
-  "purple",
-  "pink",
+  { fileColor: "red", rgb: [255, 116, 119] },
+  { fileColor: "orange", rgb: [255, 108, 47] },
+  { fileColor: "melon", rgb: [255, 174, 59] },
+  { fileColor: "green", rgb: [103, 179, 70] },
+  { fileColor: "olive", rgb: [180, 159, 41] },
+  { fileColor: "teal", rgb: [0, 157, 165] },
+  { fileColor: "blue", rgb: [98, 168, 229] },
+  { fileColor: "purple", rgb: [157, 122, 210] },
+  { fileColor: "pink", rgb: [249, 132, 202] },
 ];
 const colorControls = document.getElementById("colorControls");
 function createColorControls() {
   colors.forEach((color) => {
     let c = document.createElement("div");
-    c.id = `riso-${color}`;
+    c.id = `riso-${color.fileColor}`;
     c.classList.add("span-button");
     let s = document.createElement("span");
     s.onclick = () => {
       changeColor(color);
     };
-    s.textContent = color;
+    s.textContent = color.fileColor;
 
     c.appendChild(s);
     colorControls.appendChild(c);
@@ -70,9 +70,23 @@ function changeColor(color) {
     const parts = baseSource.split(".");
     parts.pop();
     let filename = parts.join(".") + ".png";
-    image.src = filename.replaceAll("main", `${color}-main`);
+    image.src = filename.replaceAll("main", `${color.fileColor}-main`);
   });
   allProjects.classList.toggle("hidden");
+
+  let buttons = document.querySelectorAll(".span-button span");
+  console.log(buttons);
+  for (let i = 0; i < buttons.length; i++) {
+    let e = buttons[i];
+    e.style.backgroundColor = `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`;
+  }
+
+  projects.forEach((project) => {
+    project.style.setProperty(
+      "--text-rgb",
+      `rgb(${color.rgb[0]},${color.rgb[1]},${color.rgb[2]})`
+    );
+  });
 }
 
 const sidebar = document.getElementById("sidebar");
