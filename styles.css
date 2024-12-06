@@ -442,8 +442,7 @@ video {
     grid-auto-flow: row;
     grid-template-areas:
       "header"
-      "main-content"
-      "footer";
+      "main-content";
     overflow-y: auto;
   }
 
@@ -509,11 +508,6 @@ video {
 
   .project.show-image:hover .project-text {
     opacity: 0;
-  }
-
-  .main-content {
-    grid-area: main-content;
-    margin-left: 0.5rem;
   }
 
   #logo-20anniv {
