@@ -108,6 +108,8 @@ marquee {
   gap: 0.3vw;
   max-width: 6vw; /* Adjust width for smaller buttons */
   margin: 0 auto;
+  padding-right: 2%;
+  padding-bottom: 5%;
 }
 
 #mobileColorControls {
